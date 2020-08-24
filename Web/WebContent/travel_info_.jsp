@@ -1,0 +1,183 @@
+<%@page import="controller.PlaceDTO"%>
+<%@page import="controller.PlaceDAO"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+		<title>No Sidebar - Helios by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+
+		<style>
+			hr{
+				top: 2em;
+				margin-bottom: 5em;
+			}
+		  table {
+		    width: 600px;
+		    border: 1px solid #444444;
+		    border-color: gray;
+		  }
+		  th, td {
+		    border: 1px solid #444444;
+		    padding: 10px;
+		  }
+		  th{
+		  	width: 300px;
+		  }
+		</style>
+</head>
+	<body class="left-sidebar is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header -->
+		<div id="page-wrapper">
+
+			<!-- Header -->
+				<div id="header">
+
+					<!-- Inner -->
+						<div class="inner">
+							<header>
+								<h1><a href="#" id="logo">여행지정보</a></h1>
+							</header>
+						</div>
+
+					<!-- Nav -->
+						<nav id="nav">
+							<ul>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="places_cat.jsp">여행지정보</a></li>
+								<li><a href="right-sidebar.html">여행후기</a></li>
+								<li><a href="no-sidebar.html">마이페이지</a></li>
+							</ul>
+						</nav>
+
+				</div>
+
+			<!-- Main -->
+				<div class="wrapper style1">
+
+					<div class="container">
+						<div class="row gtr-200">
+							<div class="col-4 col-12-mobile" id="sidebar">
+								<hr class="first" />
+								<section>
+									<br><br><br><br>
+									<% String place_name=request.getParameter("name"); %>
+							
+									<% PlaceDAO dao= new PlaceDAO();
+									PlaceDTO placedto = dao.getplace(place_name);
+									
+							         	%>
+									
+									<header>
+										<h3>여행지 별점: <%=placedto.getScore() %></a></h3>
+										<br>
+										<h3><a href="#">차박 여행지 정보</a></h3>
+										<h4>
+										- 해변가에 우뚝 서 있는 할미, 할아비바위와 바위 사이로 노을이 질 때면 기막힌 장관이 연출되어 서해 3대 낙조 명승지인 꽃지 해변
+										- 바닷물이 내륙 깊숙이 드나드는 곳으로 고려 시대 몽고의 침략에 항거한 삼별초가 주둔하며 훈련했던 천혜의 군사요충지인 병술만
+										- 몽돌로 이루어진 샛별 해변에서 자갈 사이로 부딪히는 파도소리를 들을 수 있음
+									</h4>
+									</header>
+									
+									
+									<br><br>
+									<h1>주소</h1>
+									
+									<span><%=placedto.getPlace_address() %></span>
+									<br><br>
+									<h1>주변 공중화장실</h1>
+									
+									<span><%=placedto.getToilet() %></span>
+									<br><br>
+									<h1>주변 개수대</h1>
+									
+									<span><%=placedto.getSink() %></span>
+									<br><br>
+									<h1>주변 수돗물</h1>
+									
+									<span><%=placedto.getWater() %></span>
+									<br>
+									
+								</section>
+								
+								<hr />
+								<section>
+										<header>
+											<h3>차박 여행지 해시태그</h3>
+										</header>
+										<p>
+										
+										<div class="filebox"> 
+											<label for="ex_file">#관광지</label>
+											<label for="ex_file">#생태관광지</label>
+											<label for="ex_file">#소선암자연휴양림</label>
+											<label for="ex_file">#자연</label>
+											<label for="ex_file">#자연휴양림</label>
+											<label for="ex_file">#충청권</label>
+										
+										</div>
+											
+										</p>
+										
+									</section>
+								
+									
+							</div>
+							<div class="col-8 col-12-mobile imp-mobile" id="content">
+								<article id="main">
+									<header>
+										<h2><a href="#"><%=place_name %></a></h2>
+										
+										
+									</header>
+									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+									
+									
+									<section>
+										<header>
+											<h3>지도보기</h3>
+										</header>
+										<img src="images/pic02.jpg" alt="" />
+										
+									</section>
+								</article>
+							</div>
+						</div>
+						<footer>
+								<center>
+								<a href="places_cat.jsp" class="button">목록으로</a>
+								</center>
+							</footer>
+						<hr />
+						<div class="row">
+							<article class="col-4 col-12-mobile special">
+								
+
+							
+
+							
+
+								
+
+							
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/jquery.scrolly.min.js"></script>
+			<script src="assets/js/jquery.scrollex.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

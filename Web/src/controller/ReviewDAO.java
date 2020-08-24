@@ -1,0 +1,115 @@
+package controller;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+public class ReviewDAO {
+
+	private Connection conn;
+	private PreparedStatement psmt;
+	private ResultSet rs;
+
+	private void getConnection() {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+			String db_url = "jdbc:oracle:thin:@localhost:1521:xe";
+			String db_id = "hr";
+			String db_pw = "hr";
+			conn = DriverManager.getConnection(db_url, db_id, db_pw);
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	private void close() {
+		try {
+			if (rs != null) {
+				rs.close();
+			}
+			if (psmt != null) {
+				psmt.close();
+			}
+			if (conn != null) {
+				conn.close();
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+
+	public ArrayList<ReviewDTO> getall() {
+		ArrayList<ReviewDTO> list = new ArrayList<ReviewDTO>();
+		getConnection();
+
+		try {
+
+			String sql = "select * from review";
+			psmt = conn.prepareStatement(sql);
+			rs = psmt.executeQuery();
+
+			while (rs.next()) {
+				ReviewDTO reviewdto = new ReviewDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+						rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9));
+				list.add(reviewdto);
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return list;
+	}
+
+	public ReviewDTO getinfo(String num) {
+		getConnection();
+		ReviewDTO reviewdto = null;
+		String sql = "select * from review where review_num=?";
+		try {
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(1, num);
+			rs = psmt.executeQuery();
+			if (rs.next()) {
+				reviewdto = new ReviewDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4),
+						rs.getString(5), rs.getString(6), rs.getString(7), rs.getString(8), rs.getString(9));
+			}
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+		return reviewdto;
+	}
+
+	/*
+	 * public ArrayList<ReviewDTO> selectCity(String city) {
+	 * 
+	 * ArrayList<ReviewDTO> list = new ArrayList<ReviewDTO>(); getConnection();
+	 * 
+	 * try { String sql; if(city.equals("전체")) { sql = "select * from review"; }else
+	 * { sql = "select * from review where DEST_LOCATIONS = ?"; }
+	 * 
+	 * psmt = conn.prepareStatement(sql); if(!city.equals("전체")) { psmt.setString(1,
+	 * city); } rs = psmt.executeQuery(); while (rs.next()) {
+	 * 
+	 * String review_num = rs.getString(1); String review_id = rs.getString(2);
+	 * String start_location = rs.getString(3); String dest_location =
+	 * rs.getString(4); String review_place_name = rs.getString(5); String
+	 * review_date = rs.getString(6); String review_score = rs.getString(7); String
+	 * title = rs.getString(8); String contents = rs.getString(9);
+	 * 
+	 * ReviewDTO dto = new ReviewDTO(review_num, review_id, start_location,
+	 * dest_location, review_place_name, review_date, review_score, title,
+	 * contents); list.add(dto); } } catch (SQLException e) { e.printStackTrace();
+	 * }finally { close(); }
+	 * 
+	 * return list; }
+	 */
+}
