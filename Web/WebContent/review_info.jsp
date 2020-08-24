@@ -12,7 +12,22 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 		<style>
+			.image.featured{
+				width: 800px;
+				margin-left: 320px;
+			}
 			
+			.starR{
+					  background: url('http://miuu227.godohosting.com/images/icon/ico_review.png') no-repeat right 0;
+					  background-size: auto 100%;
+					  width: 30px;
+					  height: 30px;
+					  display: inline-block;
+					  text-indent: -9999px;
+					  cursor: pointer;
+					}
+					.starR.on{background-position:0 0;}
+
 		</style>
 </head>
 <body class="no-sidebar is-preload">
@@ -54,8 +69,17 @@
 						<!-- 주소 -->		<h3><%= info.getReview_place_name() %></h3>
 							
 							</header>
-							<a href="#" class="image featured"><img src="images/test.PNG" alt="" /></a>
-
+							<a href="#" class="image featured" ><img src="images/test.PNG" alt="" /></a>
+							
+								<h3>여행지 별점: <%= info.getReview_score() %></a></h3>
+<div class="starRev">
+  <span class="starR on">별1</span>
+  <span class="starR">별2</span>
+  <span class="starR">별3</span>
+  <span class="starR">별4</span>
+  <span class="starR">별5</span>
+</div>
+								<br>
 							<h3>여행정보</h3><br>
 							<table border = 1>
 								<tr>
@@ -93,7 +117,7 @@
 									<p>
 										<%= info.getContents() %>
 									</p>
-									<h3>여행지 별점: <%= info.getReview_score() %></a></h3>
+								
 								</header>
 							
 							</section>
@@ -137,7 +161,6 @@
 
 				</div>
 
-			
 
 					
 
