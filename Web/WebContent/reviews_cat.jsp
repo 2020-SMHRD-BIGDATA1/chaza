@@ -32,6 +32,11 @@
 							</header>
 							
 						</div>
+						
+						<% String id= request.getParameter("id"); %>
+						<%  ReviewDAO reviewdao= new ReviewDAO();%>
+					   <!--   ReviewDTO reviewdto= new ReviewDTO(); 
+						    reviewdao.insert(reviewdto); %>  -->
 
 					<!-- Nav -->
 						<nav id="nav">
@@ -39,7 +44,7 @@
 								<li><a href="index.html">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
-								<li><a href="no-sidebar.html">마이페이지</a></li>
+								<li><a href="#">마이페이지</a></li>
 							</ul>
 						</nav>
 
@@ -54,13 +59,14 @@
 							<div class="col-8 col-12-mobile" id="content">
 							<header>
 								<h3>소중한 후기를 작성해주세요.</h3>
+								<br>
+								<a href="review.jsp" class="button">작성하기</a>
 								<hr />
 							</header>
 							
 						<div class="row">
 						
-						<%  ReviewDAO reviewdao= new ReviewDAO(); 
-						 ArrayList<ReviewDTO> list=reviewdao.getall(); %>
+						<% ArrayList<ReviewDTO> list=reviewdao.getall(); %>
 						 
 						 <%for (int i = 0; i < list.size(); i++) {%>
 						 
@@ -78,11 +84,10 @@
 										</div>
 										</center>
 									</div>
-									<footer>
-									<center>
-										<a href="#" class="button">더보기</a>
-										</center>
-									</footer>
+						<br>
+						<br>
+						<br>
+
 								</section>
 							</div>
 						</div>

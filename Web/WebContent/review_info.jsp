@@ -16,17 +16,30 @@
 				width: 800px;
 				margin-left: 320px;
 			}
-			
-			.starR{
-					  background: url('http://miuu227.godohosting.com/images/icon/ico_review.png') no-repeat right 0;
-					  background-size: auto 100%;
-					  width: 30px;
-					  height: 30px;
-					  display: inline-block;
-					  text-indent: -9999px;
-					  cursor: pointer;
-					}
-					.starR.on{background-position:0 0;}
+
+	 .table {
+      border-collapse: collapse;
+      border-top: 3px solid #168;
+    }  
+    .table th {
+      color: #168;
+      background: #f0f6f9;
+      text-align: center;
+    }
+    .table th, .table td {
+      padding: 20px;
+      border: 1px solid #ddd;
+    }
+    .table th:first-child, .table td:first-child {
+      border-left: 0;
+    }
+    .table th:last-child, .table td:last-child {
+      border-right: 0;
+    }
+    .table tr td:first-child{
+      text-align: center;
+    }
+    .table caption{caption-side: bottom; display: none;}
 
 		</style>
 </head>
@@ -72,36 +85,29 @@
 							<a href="#" class="image featured" ><img src="images/test.PNG" alt="" /></a>
 							
 								<h3>여행지 별점: <%= info.getReview_score() %></a></h3>
-<div class="starRev">
-  <span class="starR on">별1</span>
-  <span class="starR">별2</span>
-  <span class="starR">별3</span>
-  <span class="starR">별4</span>
-  <span class="starR">별5</span>
-</div>
-								<br>
+							<br>
 							<h3>여행정보</h3><br>
-							<table border = 1>
+							<table class="table">
+							
 								<tr>
-									<td>작성자ID</td>
-									<td>작성일자</td>
-									<td>소요시간</td>
+									<th>작성자ID</th>
+									<th>작성일자</th>
+									<th>소요시간</th>
 								</tr>
+							
 								<tr>
 									<td><%= info.getReview_id() %></td>
 									<td><%= info.getReview_date() %></td>
 									<td>3시간</td>
 								</tr>
+								
+							
 								<tr>
-									<td><br></td>
-									<td><br></td>
-									<td><br></td>
+									<th>출발지</th>
+									<th>목적지</th>
+									<th>휴식시간</th>
 								</tr>
-								<tr>
-									<td>출발지</td>
-									<td>목적지</td>
-									<td>휴식시간</td>
-								</tr>
+								
 								<tr>
 									<td><%= info.getStart_location() %></td>
 									<td><%= info.getDest_location()%></td>
@@ -123,7 +129,7 @@
 							</section>
 							<footer>
 								<center>
-								<a href="places_cat.jsp" class="button">목록으로</a>
+								<a href="reviews_cat.jsp" class="button">목록으로</a>
 								</center>
 							</footer>
 						</article>

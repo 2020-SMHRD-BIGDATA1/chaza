@@ -39,7 +39,7 @@
 								<li><a href="index.html">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
-								<li><a href="no-sidebar.html">마이페이지</a></li>
+								<li><a href="#">마이페이지</a></li>
 							</ul>
 						</nav>
 
@@ -92,8 +92,11 @@ S
 			         
 			         <%for (int i = 0; i < list.size(); i++) {%>
 					
-					<article class="col-4 col-12-mobile special" OnClick="location.href ='travel_info_.jsp'" style="cursor:pointer;">
-						<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+					<article>
+						<% String place_name=request.getParameter("name"); %>
+						<% PlaceDAO dao= new PlaceDAO();
+						PlaceDTO placedto = dao.getplace(place_name);%>
+						<a href="travel_info.jsp" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
 						<header>
 							<h3><a href="#"><%=list.get(i).getPlace_name() %></a></h3>
 						</header>
@@ -104,11 +107,8 @@ S
 					<% }%>
 
 					</div>							
-						<footer>
-						<center>
-							<a href="" class="button">더보기</a>
-						</footer>
-						</center>
+						<br>
+						<br>
 						<br>
 				</div>
 
