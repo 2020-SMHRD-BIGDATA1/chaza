@@ -27,6 +27,7 @@ public class SelectCity extends HttpServlet {
 
 		PlaceDAO dao = new PlaceDAO();
 		ArrayList<PlaceDTO> list =  dao.selectCity(city);
+
 		
 		response.setCharacterEncoding("UTF-8");
 		PrintWriter out = response.getWriter();

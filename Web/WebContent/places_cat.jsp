@@ -17,6 +17,7 @@
 				top: 2em;
 				margin-bottom: 5em;
 			}
+			
 		</style>
 
 </head>
@@ -39,7 +40,7 @@
 								<li><a href="index.html">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
-								<li><a href="#">마이페이지</a></li>
+								<li><a href="form_mypage.jsp">마이페이지</a></li>
 							</ul>
 						</nav>
 
@@ -54,15 +55,15 @@
 						<div class="row gtr-200">
 							<div>						
 								<section>
-									<header>
+									<header id="head">
 										<h3>지역정하는 버튼</h3>
 									</header>
-									<p>
-										원하는 지역 선택하기
-									</p>
 									<footer>
 									
 									<input id="all" type="button" value="전체"></input>
+									<br>
+									
+									<br>
 									<input id="gwangyeogsi" type="button" value="광역시"></input>
 									<input id="gyeonggido" type="button" value="경기도"></input>
 									<input id="jeonlado" type="button" value="전라도"></input>
@@ -81,29 +82,11 @@
 			<% PlaceDAO placedao= new PlaceDAO(); 
 			 ArrayList<PlaceDTO> list=placedao.getall();%>
 			 
-	
-						<p>총  <%=list.size() %>개의 코스가 있습니다. </p>
-						
+	         <div id="rownum">
+					
+				</div>		
 						<div class="row" id="row">
-					
-		         
-<%-- 			         <%for (int i = 0; i < list.size(); i++) {%>
-					
-					<article>
-						<% String place_name=request.getParameter("name"); %>
-						<% PlaceDAO dao= new PlaceDAO();
-						PlaceDTO placedto = dao.getplace(place_name);%>
-						<a href="travel_info.jsp" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
-						<header>
-							<h3><a href="#"><%=list.get(i).getPlace_name() %></a></h3>
-						</header>
-						<p>
-							<%= list.get(i).getPlace_cat() %>
-							  <%=list.get(i).getPlace_addr() %>
-						</p>
-					</article>
-					<% }%> 
- --%>
+
 					</div>							
 						<br>
 						<br>
@@ -266,13 +249,13 @@
 			
 			<script>
 			
-				
+			 btnInput('전체');
 			
 			      $('#all').click(function(){
 			    	  btnInput('전체');
 			      });
 			      $('#gwangyeogsi').click(function(){
-			    	  btnInput('광역시');
+			    	  btnInput("광역시");
 			      });
 			      $('#gyeonggido').click(function(){
 			    	  btnInput('경기도');
@@ -293,23 +276,33 @@
 			    	  btnInput('제주도');
 			      });
 			      
-			      
+			     
 			      function btnInput(name){
 			    	  var enc = encodeURI(name);
+			
 			    	  $.ajax({
 			    			url : 'SelectCity?city='+enc,
 			    			type : 'GET',
 			    			dataType : 'JSON',
 			    			success : function(data){
-			    				console.log(data);
-			    			 	$('#row').empty(); 
+			    				console.log(data);	
+			    				$('#row').prepend();
+			    			     $('#row').empty();		
+			    			     $('#rownum').empty();
+			    			     $('#head').empty();
+			    			     $('#rownum').prepend('<p>총  '+data.length+'개의 코스가 있습니다.</p>');  
+			    			     $('#head').prepend('<center><h2>'+name+'</h2></center>');
+			    			     
 			    				for(var i = 0; i < data.length; i++){
-			    					$('#row').prepend('<article><a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a><header><h3>'+data[i].place_name+'</h3></header><p>'+data[i].place_cat+ data[i].place_addr+'</p></article>');
+			    					$('#row').prepend('<article><a href="'+encodeURI("travel_info.jsp?name="+data[i].place_name) +'"  class="image featured"><img src="images/pic08.jpg" alt="" /></a><header><h3>'+data[i].place_name+'</h3></header><p>'+data[i].place_cat+ data[i].place_addr+'</p></article>');
 			    				}
 			    			}
 			    		});
+			    	  
 			      }
-			            
+			      
+			      /* $('#row').prepend('<article><a href="'+encodeURI('"travel_info.jsp?name='+data[i].place_name+'"')+'"  class="image featured"><img src="images/pic08.jpg" alt="" /></a><header><h3>'+data[i].place_name+'</h3></header><p>'+data[i].place_cat+ data[i].place_addr+'</p></article>'); */
+			      /* $('#row').prepend('<article><a href="'+encodeURI("travel_info.jsp?name=김제 금평저수지")+'"  class="image featured"><img src="images/pic08.jpg" alt="" /></a><header><h3>'+data[i].place_name+'</h3></header><p>'+data[i].place_cat+ data[i].place_addr+'</p></article>'); */
 			</script>
 
 

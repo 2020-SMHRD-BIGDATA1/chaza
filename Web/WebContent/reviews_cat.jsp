@@ -38,18 +38,30 @@
 							
 						</div>
 						
-						<% String id= request.getParameter("id"); %>
+						<% 
+						
+						String start_location = request.getParameter("start_location");
+						String dest_location= request.getParameter("dest_location");
+						String travel_time= request.getParameter("travel_time");
+						String break_time= request.getParameter("break_time");
+						String review_score= request.getParameter("review_score");
+						String review_title= request.getParameter("review_title");
+						String review_contents= request.getParameter("review_contents");
+						String place_name= request.getParameter("place_name");
+						String review_image= request.getParameter("review_image");
+												
+						%>
 						<%  ReviewDAO reviewdao= new ReviewDAO();%>
-					   <!--   ReviewDTO reviewdto= new ReviewDTO(); 
-						    reviewdao.insert(reviewdto); %>  -->
-
+					     <%-- <%   ReviewDTO reviewdto= new ReviewDTO(); 
+						    reviewdao.insert(reviewdto); %>  
+ --%>
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
 								<li><a href="index.html">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
-								<li><a href="#">마이페이지</a></li>
+								<li><a href="form_mypage.jsp">마이페이지</a></li>
 							</ul>
 						</nav>
 

@@ -26,7 +26,7 @@ DROP TABLE PLACE
 CREATE TABLE PLACE(
 			   PLACE_ID NUMBER 					NOT NULL,		-- 여행지 아이디
                PLACE_NAME VARCHAR2(100)			NOT NULL,		-- 여행지 이름
-               PLACE_CAT CHAR(20)				NOT NULL,		-- 지역 카테고리
+               PLACE_CAT VARCHAR2(100)			NOT NULL,		-- 지역 카테고리
                PLACE_ADDR VARCHAR2(200)         NOT NULL,		-- 여행지 주소
                TOILET CHAR(20)                  NOT NULL,		-- 화장실 여부
                SINK CHAR(20)                  NOT NULL,			-- 주변 개수대 여부
@@ -110,7 +110,7 @@ INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WA
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (28,'무안 조금나루 유원지','전라도','전남 무안군 망운면 조금나루길 297','사용가능','사용가능','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (29,'하동 구재봉 활공장','경상도','경남 하동군 악양면 축지리 산 71','사용가능','사용불가','사용불가','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (30,'철원 문혜리','강원도','강원 철원군 갈말읍 문혜리 산 304-2','사용불가','사용불가','사용불가','nan','nan', 5);
-INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (31,'동검도 선착장 옆','광역시','인천 강화군 길상면 동검길65번길 91-9 (동검리)','사용가능','사용불가','사용가능','nan','nan', 5);
+INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (31,'동검도 선착장 옆','광역시','인천 강화군 길상면 동검길','사용가능','사용불가','사용가능','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (32,'금사면 남한강변','경기도','경기 여주시 금사면 전북리 480','사용불가','사용불가','사용불가','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (33,'연천 임진강 주상절리','경기도','경기 연천군 미산면 동이리 817','사용가능','사용가능','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (34,'강진 사초해변공원','전라도','전남 강진군 신전면 사초리 853','사용가능','사용불가','사용가능','nan','nan', 4);
@@ -134,14 +134,14 @@ INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WA
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (52,'영광 와탄천변 비밀의 화원','전라도','전남 영광군 법성면 입암리 435-4','사용불가','사용불가','사용불가','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (53,'대창골','충청도','충남 천안시 동남구 북면 운용리 117','사용가능','사용불가','사용가능','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (54,'춘천 수변공원','강원도','강원 춘천시 삼천동 200-9','사용가능','사용불가','사용가능','nan','nan', 5);
-INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (55,'이가리 간이해변','경상도','경북 포항시 북구 청하면 이가리 산 22-1','사용가능','사용불가','사용가능','nan','nan', 4);
+INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (55,'이가리 간이해변','경상도','경북 포항시 북구 청하면 22-1','사용가능','사용불가','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (56,'하옥계곡 야영장','경상도','경북 포항시 북구 죽장면 하옥리 681','사용가능','사용가능','사용가능','nan','nan', 4);
-INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (57,'위배지미하류','경상도','경북 포항시 북구 죽장면 하옥리 650-3','사용가능','사용불가','사용불가','nan','nan', 4);
+INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (57,'위배지미하류','경상도','경북 포항시 북구 죽장면 650-3','사용가능','사용불가','사용불가','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (58,'청벽산 물골 유원지','강원도','강원 홍천군 내촌면 화상대리 산 377','사용불가','사용불가','사용불가','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (59,'순천 용오름 계곡','전라도','전남 순천시 주암면 운룡리 1019','사용가능','사용불가','사용불가','nan','nan', 4);
-INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (60,'풍서천변','충청도','충남 천안시 동남구 광덕면 보산원리 687-1','사용가능','사용불가','사용불가','nan','nan', 4);
+INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (60,'풍서천변','충청도','충남 천안시 동남구 광덕면687-1','사용가능','사용불가','사용불가','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (61,'광덕산 간이 캠핑장','충청도','충남 천안시 동남구 광덕면 대덕리 420','사용가능','사용가능','사용가능','nan','nan', 5);
-INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (62,'고성 장신유원지','강원도','강원 고성군 간섭읍 소똥령마을길 32 (장신리, 장신유원지휴게소)','사용가능','사용가능','사용가능','nan','nan', 4);
+INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (62,'고성 장신유원지','강원도','강원 고성군 간섭읍 소똥령마을길 32','사용가능','사용가능','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (63,'천안 OK캠핑장 주변','충청도','충남 천안시 동남구 북면 명덕리 603-6','사용가능','사용가능','사용가능','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (64,'목계솔밭','충청도','충북 충주시 중앙탑면 장천리 412-2','사용가능','사용가능','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (65,'섬강 문막교 주변','강원도','강원 원주시 문막읍 취병리 438-73','사용불가','사용불가','사용불가','nan','nan', 5);
@@ -177,8 +177,8 @@ INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WA
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (95,'병지방 오토캠핑장 주변 계곡','강원도','강원 횡성군 갑천면 병지방리 산 20','사용가능','사용불가','사용불가','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (96,'금강2교 차박지A','충청도','충북 옥천군 동이면 금암리 1139','사용가능','사용불가','사용불가','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (97,'남노일 강변유원지','강원도','강원 홍천군 남면 남노일리 369','사용가능','사용불가','사용불가','nan','nan', 5);
-INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (98,'강정 자연발생 유원지A','경상도','경남 함양군 유림면 장항리 산 1-1','사용불가','사용불가','사용불가','nan','nan', 5);
-INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (99,'강정 자연발생 유원지B','경상도','경남 산청군 생초면 산수로 1153번길 151','사용불가','사용불가','사용불가','nan','nan', 5);
+INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (98,'강정 자연발생 유원지A','경상도','경남 함양군 유림면 1-1','사용불가','사용불가','사용불가','nan','nan', 5);
+INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (99,'강정 자연발생 유원지B','경상도','경남 산청군 생초면  1153번길','사용불가','사용불가','사용불가','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (100,'도장계곡 자연발생유원지','경기도','경기 양평군 서종면 도장리 321','사용가능','사용가능','사용가능','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (101,'백제보 나루터 주변 금강변','충청도','충남 부여군 부여읍 정동리 184-1','사용불가','사용불가','사용불가','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (102,'함양 남강 물줄기 계곡','경상도','경남 함양군 서하면 봉전리 2021','사용불가','사용불가','사용불가','nan','nan', 4);
@@ -213,7 +213,7 @@ INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WA
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (131,'산림청연수원 주차장','전라도','전북 부안군 변산면 도청리 212-5','사용가능','사용불가','사용불가','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (132,'장전계곡 상류','강원도','강원 평창군 진부면 장전리 97','사용가능','사용불가','사용불가','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (133,'정선 어천 주상절리 (SUV차량만)','강원도','강원 정선군 정선읍 덕우리 303-1','사용불가','사용불가','사용불가','nan','nan', 4);
-INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (134,'광암해수욕장','경상도','경남 창원시 마산합포구 진동면 요장리 230','사용가능','사용가능','사용가능','nan','nan', 4);
+INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (134,'광암해수욕장','경상도','경남 창원시 마산합포구230','사용가능','사용가능','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (135,'알뜨르비행장 주변 공터','제주도','제주특별자치도 서귀포시 대정읍 상모리 1670-3','사용가능','사용불가','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (136,'감포읍 해변 노지','경상도','경북 경주시 감포읍 전촌리 산 13-1','사용가능','사용불가','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (137,'괴산 외쌍 유원지','충청도','충북 괴산군 칠성면 쌍곡리 232-1','사용가능','사용불가','사용불가','nan','nan', 5);
@@ -230,7 +230,7 @@ INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WA
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (148,'오두교 다리밑','경기도','경기 남양주시 진접읍 부평리 498-6','사용가능','사용불가','사용불가','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (149,'삼척 해변 주변','강원도','강원 삼척시 갈천동 14-18','사용가능','사용불가','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (150,'태안 방포항 부근 노지','충청도','충남 태안군 안면읍 승언리 1317-19','사용가능','사용불가','사용불가','nan','nan', 4);
-INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (151,'노산리 솔밭 자연유원지','충청도','충북 청주시 서원구 현도면 노산리 897-2','사용불가','사용가능','사용가능','nan','nan', 4);
+INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (151,'노산리 솔밭 자연유원지','충청도','충북 청주시 서원구 897-2','사용불가','사용가능','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (152,'금소생태공원','경상도','경북 안동시 임하면 금소리 1028-88','사용가능','사용가능','사용가능','nan','nan', 4);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (153,'하동 상이리 횡천강 계곡','경상도','경남 하동군 청암면 상이리 505-6','사용가능','사용불가','사용불가','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (154,'운일암 반일암','전라도','전북 진안군 주천면 대불리 26','사용가능','사용불가','사용가능','nan','nan', 4);
@@ -260,3 +260,14 @@ INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WA
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (178,'평림댐 공원','전라도','전남 장성군 삼계면 수옥리 854-12','사용가능','사용가능','사용가능','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (179,'마시안 해변','광역시','인천 중구 덕교동 662-5','사용가능','사용불가','사용불가','nan','nan', 5);
 INSERT INTO PLACE (PLACE_ID, PLACE_NAME, PLACE_CAT, PLACE_ADDR, TOILET, SINK, WATER, TITLE, CONTENTS, PLACE_SCORE) VALUES (180,'실미도 유원지','광역시','인천 중구 무의동 768-5','사용가능','사용가능','사용가능','nan','nan', 3);
+
+
+delete place where place_name='동검도 선착장 옆';
+delete place where place_name='이가리 간이해변';
+delete place where place_name='강정 자연발생 유원지A';
+delete place where place_name='강정 자연발생 유원지B';
+delete place where place_name='위배지미하류';
+delete place where place_name='풍서천변';
+delete place where place_name='노산리 솔밭 자연유원지';
+delete place where place_name='고성 장신유원지';
+delete place where place_name='광암해수욕장';

@@ -91,15 +91,9 @@ public class PlaceDAO {
     
     	try {
 			
-    		//if(addr.equals("전체")) {
-    	    	String sql= "select * from place";
-    	    	psmt = conn.prepareStatement(sql);
-    	    	//}
-				/*
-				 * else { String sql= "select * from place where place_addr=?"; psmt =
-				 * conn.prepareStatement(sql); psmt.setString(1, addr); }
-				 */
     		
+    	    	String sql= "select * from place";
+    	    	psmt = conn.prepareStatement(sql);   	    	
 			rs = psmt.executeQuery();
 			while(rs.next()) {
 			PlaceDTO placedto = new PlaceDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
@@ -133,11 +127,10 @@ public class PlaceDAO {
 					psmt = conn.prepareStatement(sql);
 					psmt.setString(1, city);
 					rs = psmt.executeQuery();
-					System.out.println("널임둥? "+rs.getRow());
+					
 				}
 				
 				while (rs.next()) {
-					System.out.println("while문으로 넘어오는지 확인");
 
 					PlaceDTO dto = new PlaceDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
 							rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));		

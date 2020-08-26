@@ -62,7 +62,7 @@
 								<li><a href="index.html">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
-								<li><a href="#">마이페이지</a></li>
+								<li><a href="form_mypage.jsp">마이페이지</a></li>
 							</ul>
 						</nav>
 
@@ -76,9 +76,10 @@
 							<header>
 							<% String num=request.getParameter("num"); %>
 								<% ReviewDAO reviewdao = new ReviewDAO();
+							
 									ReviewDTO info = reviewdao.getinfo(num);%>
 		
-						<!-- 타이틀 --> <h2><%=num %>.<%= info.getReview_title() %></h2>
+						<!-- 타이틀 --> <h2><%= info.getReview_title() %></h2>
 						<!-- 주소 -->		<h3><%= info.getPlace_name() %></h3>
 							
 							</header>

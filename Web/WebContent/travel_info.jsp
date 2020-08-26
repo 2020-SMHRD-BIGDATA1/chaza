@@ -16,20 +16,15 @@
 		<style>
 			hr{
 				top: 2em;
-				margin-bottom: 5em;
+				margin-bottom: 1em;
 			}
-		  table {
-		    width: 600px;
-		    border: 1px solid #444444;
-		    border-color: gray;
-		  }
-		  th, td {
-		    border: 1px solid #444444;
-		    padding: 10px;
-		  }
-		  th{
-		  	width: 300px;
-		  }
+ 			h1{
+				margin: 0.5em;
+			}
+			span{
+				margin: 0.5em;
+			}
+		 
 		</style>
 </head>
 	<body class="left-sidebar is-preload">
@@ -68,25 +63,40 @@
 							<div class="col-4 col-12-mobile" id="sidebar">
 								<hr class="first" />
 								<section>
-									<br><br><br><br>
-									<% String place_name=request.getParameter("name"); %>
-							
+								
+									<% request.getCharacterEncoding();
+									String place_name=request.getParameter("name"); %>
+									
 									<% PlaceDAO dao= new PlaceDAO();
 									PlaceDTO placedto = dao.getplace(place_name);
-									
 							         	%>
-									
-									<header>
-										<h3>여행지 별점: <%=placedto.getPlace_score()%></a></h3>
+										<section>
+										<header>
+											<h3>여행지 별점: <%=placedto.getPlace_score()%></h3>
+										
+										<hr><br><br>
+											<h3>지도보기</h3>
+										</header>
+										<img src="images/pic02.jpg" alt="" />
+										
+									</section>
+								<%-- 	<header>
+										<h3>여행지 별점: <%=placedto.getPlace_score()%></h3>
 										<br>
 										<h3>차박 여행지 정보</h3>
 										<br>
 										<h5>
 										<%=placedto.getContents() %>
 									</h5>
-									</header>
+
+									</header> --%>
+							
 									
 									
+									
+									
+									
+									<hr>
 									<br><br>
 									<h1>주소</h1>
 									
@@ -103,12 +113,12 @@
 									<h1>주변 수돗물</h1>
 									
 									<span><%=placedto.getWater() %></span>
-									<br>
+									<br> 
 									
 								</section>
 								
 								<hr />
-								<section>
+	<!-- 							<section>
 										<header>
 											<h3>차박 여행지 해시태그</h3>
 										</header>
@@ -127,7 +137,7 @@
 										</p>
 										
 									</section>
-								
+								 -->
 									
 							</div>
 							<div class="col-8 col-12-mobile imp-mobile" id="content">
@@ -135,18 +145,28 @@
 									<header>
 										<h2><a href="#"><%=place_name %></a></h2>
 										
-										
+										<hr>
 									</header>
 									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
 									
+										<section>
 									
-									<section>
+										<h3>차박 여행지 정보</h3>
+										<br>
+										<h5>
+										<%=placedto.getContents() %>
+									</h5>
+
+									</section>>
+									
+								<!-- 	<section>
 										<header>
+										
 											<h3>지도보기</h3>
 										</header>
 										<img src="images/pic02.jpg" alt="" />
 										
-									</section>
+									</section> -->
 								</article>
 							</div>
 						</div>
