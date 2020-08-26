@@ -55,9 +55,9 @@
 .info .close {position: absolute;top: 10px;right: 10px;color: #888;width: 17px;height: 17px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/overlay_close.png');}
 .info .close:hover {cursor: pointer;}
 .info .body {position: relative;overflow: hidden;}
-.info .desc {position: relative;margin: 13px 10px 0 10px;height: 75px;}
-.desc .ellipsis {overflow: hidden;text-overflow: ellipsis;word-break:break-all;white-space:normal;}
-.info .roadsearch {position: absolute;bottom: 14px;right:10px;width: 70px;height: 30px;border: 1px;overflow: hidden;border:1px solid #ccc;color:#000;background-color:#fff;text-align:center;line-height:2.5em}
+.info .desc {position: relative;margin: 13px 10px 0 10px;}
+.desc .ellipsis { overflow: hidden;text-overflow: ellipsis;word-break:break-all;white-space:normal;}
+.info .roadsearch {float:left; bottom: 14px;right:10px;width: 70px;height: 30px;border: 1px;overflow: hidden;border:1px solid #ccc;color:#000;background-color:#fff;text-align:center;line-height:2.5em}
 .info:after {content: '';position: absolute;margin-left: -12px;left: 50%;bottom: 0;width: 22px;height: 12px;background: url('https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/vertex_white.png')}
 .info .tel {color: #5085BB;}
 </style>
@@ -351,16 +351,20 @@ var content = '<div class="wrap">' +
             '            <div class="close" onclick="closeOverlay()" title="닫기"></div>' + 
             '        </div>' + 
             '        <div class="body">' + 
-            '            <div class="roadsearch">' +
-            '				 <div><a href="https://map.kakao.com/link/to/Hello World!,33.451475, 126.570528" style="color:blue" target="_blank"><b>경로탐색</b></a></div>'+
-            '           </div>' + 
+           
             '            <div class="desc">' + 
             '                <div class="ellipsis">강원 고성군 간섭읍 소똥령마을길 32 (장신리, 장신유원지휴게소)</div>' +  
-            '                <div><a href="https://www.kakaocorp.com/main" target="_blank" class="tel">062-375-1921</a></div>' + 
+            '                <div style="float : left;"><a href="https://www.kakaocorp.com/main" target="_blank" class="tel" style = "padding-right: 120px;">062-375-1921</a></div>' + 
             '            </div>' + 
+            
+            '            <div onclick="search();" class="roadsearch" style="float : left;">' + 
+            '				 <a href="https://map.kakao.com/link/to/Hello World!,33.451475, 126.570528" style="color:blue" target="_blank">경로탐색</a>'+
+            '          </div>' +  
+            
             '        </div>' + 
             '    </div>' +    
             '</div>';
+            
 
 // 마커 위에 커스텀오버레이를 표시합니다
 // 마커를 중심으로 커스텀 오버레이를 표시하기위해 CSS를 이용해 위치를 설정했습니다
@@ -379,6 +383,11 @@ kakao.maps.event.addListener(marker, 'click', function() {
 function closeOverlay() {
     overlay.setMap(null);     
 }
+</script>
+<script>
+
+
+
 </script>
 </body>
 </html>
