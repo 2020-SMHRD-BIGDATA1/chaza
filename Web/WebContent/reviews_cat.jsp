@@ -17,6 +17,11 @@
 				top: 2em;
 				margin-bottom: 5em;
 			}
+			
+		  td {
+		    padding: 8px;
+		    
+		  }
 		</style>
 </head>
 	<body class="right-sidebar is-preload">
@@ -60,7 +65,7 @@
 							<header>
 								<h3>소중한 후기를 작성해주세요.</h3>
 								<br>
-								<a href="review.jsp" class="button">작성하기</a>
+								<a href="review_write.jsp" class="button">작성하기</a>
 								<hr />
 							</header>
 							
@@ -70,13 +75,29 @@
 						 
 						 <%for (int i = 0; i < list.size(); i++) {%>
 						 
-						 <% String num=list.get(i).getReview_num(); %>
+						 <% String num=list.get(i).getReview_number(); %>
 						
 							<article class="col-4 col-12-mobile special">
 								<a href="review_info.jsp?num=<%=num%>" class="image featured"><img src="images/gil.PNG" alt="" /></a>
-								<header>
-									<h3><a href="review_info.jsp?num=<%=num%>"><%= list.get(i).getTitle() %></a></h3>
-								</header>
+								<table>
+									<tr>
+										<th align="left"><%= list.get(i).getReview_id() %></th>
+										<th></th>
+										<th align="right"><%=list.get(i).getReview_date() %></th>
+									</tr>
+									<tr align="center" >
+										<td colspan="3"><h3><%= list.get(i).getReview_title() %></h3></td>
+									
+									</tr>
+									<tr align="center">
+										<td colspan="3"><%=list.get(i).getPlace_name() %></td>
+										
+									</tr>	
+								</table>
+									<%-- <h4><%= list.get(i).getReview_id() %></h4><br>
+									<h3><a href="review_info.jsp?num=<%=num%>"><%= list.get(i).getReview_title() %></a></h3><br>
+									<h4><%=list.get(i).getPlace_name() %></h4> --%>
+							
 								</article>
 							<% }%>
 

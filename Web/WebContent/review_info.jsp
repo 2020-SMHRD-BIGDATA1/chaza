@@ -78,13 +78,13 @@
 								<% ReviewDAO reviewdao = new ReviewDAO();
 									ReviewDTO info = reviewdao.getinfo(num);%>
 		
-						<!-- 타이틀 --> <h2><%=num %>.</h2><h2><%= info.getTitle() %></h2>
-						<!-- 주소 -->		<h3><%= info.getReview_place_name() %></h3>
+						<!-- 타이틀 --> <h2><%=num %>.<%= info.getReview_title() %></h2>
+						<!-- 주소 -->		<h3><%= info.getPlace_name() %></h3>
 							
 							</header>
 							<a href="#" class="image featured" ><img src="images/test.PNG" alt="" /></a>
 							
-								<h3>여행지 별점: <%= info.getReview_score() %></a></h3>
+								<h3>여행지 별점: <%= info.getReview_score() %></h3>
 							<br>
 							<h3>여행정보</h3><br>
 							<table class="table">
@@ -98,7 +98,7 @@
 								<tr>
 									<td><%= info.getReview_id() %></td>
 									<td><%= info.getReview_date() %></td>
-									<td>3시간</td>
+									<td><%= info.getTravel_time()%></td>
 								</tr>
 								
 							
@@ -111,7 +111,7 @@
 								<tr>
 									<td><%= info.getStart_location() %></td>
 									<td><%= info.getDest_location()%></td>
-									<td>30분</td>
+									<td><%= info.getBreak_time()%></td>
 								</tr>
 								
 							</table>
@@ -121,7 +121,7 @@
 								<header>
 									<h3>이용후기</h3>
 									<p>
-										<%= info.getContents() %>
+										<%= info.getReview_contents() %>
 									</p>
 								
 								</header>
@@ -134,35 +134,7 @@
 							</footer>
 						</article>
 						<hr />
-						<div class="row">
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/img2.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Gravida aliquam penatibus</a></h3>
-								</header>
-								<p>
-									사진1
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/img3.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Sed quis rhoncus placerat</a></h3>
-								</header>
-								<p>
-									사진2
-								</p>
-							</article>
-							<article class="col-4 col-12-mobile special">
-								<a href="#" class="image featured"><img src="images/img4.jpg" alt="" /></a>
-								<header>
-									<h3><a href="#">Magna laoreet et aliquam</a></h3>
-								</header>
-								<p>
-									사진3
-								</p>
-							</article>
-						</div>
+
 					</div>
 
 				</div>

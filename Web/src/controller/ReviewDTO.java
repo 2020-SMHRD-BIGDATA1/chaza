@@ -2,36 +2,47 @@ package controller;
 
 public class ReviewDTO {
 
-	private String review_num;
+	private String review_number;
 	private String review_id;
 	private String start_location;
 	private String dest_location;
-	private String review_place_name;
-	private String review_date;
+	private String travel_time;
+	private String break_time;
 	private String review_score;
-	private String title;
-	private String contents;
+	private String review_title;
+	private String review_contents;
+	private String place_name;
+	private String review_date;
+	private String map_lat;
+	private String map_long;
+	private String review_image;
 	
-	public ReviewDTO(String review_num, String review_id, String start_location, String dest_location,
-			String review_place_name, String review_date, String review_score, String title, String contents) {
+	public ReviewDTO(String review_number, String review_id, String start_location, String dest_location,
+			String travel_time, String break_time, String review_score, String review_title, String review_contents,
+			String place_name, String review_date, String map_lat, String map_long, String review_image) {
 		super();
-		this.review_num = review_num;
+		this.review_number = review_number;
 		this.review_id = review_id;
 		this.start_location = start_location;
 		this.dest_location = dest_location;
-		this.review_place_name = review_place_name;
-		this.review_date = review_date;
+		this.travel_time = travel_time;
+		this.break_time = break_time;
 		this.review_score = review_score;
-		this.title = title;
-		this.contents = contents;
+		this.review_title = review_title;
+		this.review_contents = review_contents;
+		this.place_name = place_name;
+		this.review_date = review_date;
+		this.map_lat = map_lat;
+		this.map_long = map_long;
+		this.review_image = review_image;
 	}
 
-	public String getReview_num() {
-		return review_num;
+	public String getReview_number() {
+		return review_number;
 	}
 
-	public void setReview_num(String review_num) {
-		this.review_num = review_num;
+	public void setReview_number(String review_number) {
+		this.review_number = review_number;
 	}
 
 	public String getReview_id() {
@@ -58,20 +69,20 @@ public class ReviewDTO {
 		this.dest_location = dest_location;
 	}
 
-	public String getReview_place_name() {
-		return review_place_name;
+	public String getTravel_time() {
+		return travel_time;
 	}
 
-	public void setReview_place_name(String review_place_name) {
-		this.review_place_name = review_place_name;
+	public void setTravel_time(String travel_time) {
+		this.travel_time = travel_time;
 	}
 
-	public String getReview_date() {
-		return review_date;
+	public String getBreak_time() {
+		return break_time;
 	}
 
-	public void setReview_date(String review_date) {
-		this.review_date = review_date;
+	public void setBreak_time(String break_time) {
+		this.break_time = break_time;
 	}
 
 	public String getReview_score() {
@@ -82,21 +93,64 @@ public class ReviewDTO {
 		this.review_score = review_score;
 	}
 
-	public String getTitle() {
-		return title;
+	public String getReview_title() {
+		return review_title;
 	}
 
-	public void setTitle(String title) {
-		this.title = title;
+	public void setReview_title(String review_title) {
+		this.review_title = review_title;
 	}
 
-	public String getContents() {
-		return contents;
+	public String getReview_contents() {
+		return review_contents;
 	}
 
-	public void setContents(String contents) {
-		this.contents = contents;
+	public void setReview_contents(String review_contents) {
+		this.review_contents = review_contents;
 	}
+
+	public String getPlace_name() {
+		return place_name;
+	}
+
+	public void setPlace_name(String place_name) {
+		this.place_name = place_name;
+	}
+
+	public String getReview_date() {
+		return review_date;
+	}
+
+	public void setReview_date(String review_date) {
+		this.review_date = review_date;
+	}
+
+	public String getMap_lat() {
+		return map_lat;
+	}
+
+	public void setMap_lat(String map_lat) {
+		this.map_lat = map_lat;
+	}
+
+	public String getMap_long() {
+		return map_long;
+	}
+
+	public void setMap_long(String map_long) {
+		this.map_long = map_long;
+	}
+
+	public String getReview_image() {
+		return review_image;
+	}
+
+	public void setReview_image(String review_image) {
+		this.review_image = review_image;
+	}
+	
+	
+
 	
 	
 }

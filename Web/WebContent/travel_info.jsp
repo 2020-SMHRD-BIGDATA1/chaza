@@ -77,14 +77,12 @@
 							         	%>
 									
 									<header>
-										<h3>여행지 별점: <%=placedto.getScore() %></a></h3>
+										<h3>여행지 별점: <%=placedto.getPlace_score()%></a></h3>
 										<br>
 										<h3>차박 여행지 정보</h3>
 										<br>
 										<h5>
-										- 해변가에 우뚝 서 있는 할미, 할아비바위와 바위 사이로 노을이 질 때면 기막힌 장관이 연출되어 서해 3대 낙조 명승지인 꽃지 해변
-										- 바닷물이 내륙 깊숙이 드나드는 곳으로 고려 시대 몽고의 침략에 항거한 삼별초가 주둔하며 훈련했던 천혜의 군사요충지인 병술만
-										- 몽돌로 이루어진 샛별 해변에서 자갈 사이로 부딪히는 파도소리를 들을 수 있음
+										<%=placedto.getContents() %>
 									</h5>
 									</header>
 									
@@ -92,7 +90,7 @@
 									<br><br>
 									<h1>주소</h1>
 									
-									<span><%=placedto.getPlace_address() %></span>
+									<span><%=placedto.getPlace_addr() %></span>
 									<br><br>
 									<h1>주변 공중화장실</h1>
 									
