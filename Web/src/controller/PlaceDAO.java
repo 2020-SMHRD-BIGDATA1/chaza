@@ -44,7 +44,7 @@ public class PlaceDAO {
 		}
 	}
 
-    public PlaceDTO getplace(String place_name) {
+    public PlaceDTO getplace(String name) {
     	
     	getConnection();
     	
@@ -53,7 +53,7 @@ public class PlaceDAO {
     	String sql="select * from place where place_name=?";
     	try {
 			psmt=conn.prepareStatement(sql);
-			psmt.setString(1, place_name);
+			psmt.setString(1, name);
 	    	rs=psmt.executeQuery();
 	    	
 		} catch (SQLException e) {
@@ -61,11 +61,11 @@ public class PlaceDAO {
 			e.printStackTrace();
 		}
     
-    
     	try {
 			if(rs.next()) {
 			
-			placedto= new PlaceDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));	
+			placedto= new PlaceDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
+					rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));	
 		
 			
 			}
@@ -102,7 +102,8 @@ public class PlaceDAO {
     		
 			rs = psmt.executeQuery();
 			while(rs.next()) {
-			PlaceDTO placedto = new PlaceDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6));
+			PlaceDTO placedto = new PlaceDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
+					rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));
 			list.add(placedto);
 			}
 			
@@ -117,31 +118,30 @@ public class PlaceDAO {
 	public ArrayList<PlaceDTO> selectCity(String city) {
 
 			ArrayList<PlaceDTO> list = new ArrayList<PlaceDTO>();
-			getConnection();
-
+			
+			
+			String sql;
 			try {
-				String sql;
 				if(city.equals("전체")) {
+					getConnection();
 					sql = "select * from PLACE";
+					psmt = conn.prepareStatement(sql);
+					rs = psmt.executeQuery();
 				}else {
-					sql = "select * from PLACE where PLACE_ADDR = ?";
+					getConnection();
+					sql = "select * from PLACE where PLACE_CAT = ?";
+					psmt = conn.prepareStatement(sql);
+					psmt.setString(1, city);
+					rs = psmt.executeQuery();
+					System.out.println("널임둥? "+rs.getRow());
 				}
 				
-				psmt = conn.prepareStatement(sql);
-				if(!city.equals("전체")) {
-					psmt.setString(1, city);
-				}
-				rs = psmt.executeQuery();
 				while (rs.next()) {
+					System.out.println("while문으로 넘어오는지 확인");
 
-					String place_name = rs.getString(1);
-					String place_address = rs.getString(2);
-					String toilet = rs.getString(3);
-					String sink = rs.getString(4);
-					String water = rs.getString(5);
-					String score = rs.getString(6);
+					PlaceDTO dto = new PlaceDTO(rs.getString(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getString(6),
+							rs.getString(7),rs.getString(8),rs.getString(9),rs.getString(10));		
 					
-					PlaceDTO dto = new PlaceDTO(place_name, place_address, toilet, sink, water, score);				
 					list.add(dto);
 				}
 			} catch (SQLException e) {
@@ -152,6 +152,8 @@ public class PlaceDAO {
 
 			return list;
 	}
+	
+
 	
 
 	

@@ -45,7 +45,7 @@
 
 				</div>
 
-S
+
 			<!-- Main -->
 				<div class="wrapper style1">
 
@@ -63,17 +63,14 @@ S
 									<footer>
 									
 									<input id="all" type="button" value="전체"></input>
-									<input id="seoul" type="button" value="서울 강동구"></input>
-									<input id="gwangju" type="button" value="광주 임암동"></input>
+									<input id="gwangyeogsi" type="button" value="광역시"></input>
+									<input id="gyeonggido" type="button" value="경기도"></input>
+									<input id="jeonlado" type="button" value="전라도"></input>
+									<input id="gyeongsangdo" type="button" value="경상도"></input>
+									<input id="chungcheongdo" type="button" value="충청도"></input>
+									<input id="gangwondo" type="button" value="강원도"></input>
+									<input id="jejudo" type="button" value="제주도"></input>
 
-										<!-- a href="#" class="button" name="전체">전체</a>
-										<a href="#" class="button" name="광주">광주</a>
-										<a href="#" class="button" name="서울">서울</a>
-										<a href="#" class="button">버튼</a>
-										<a href="#" class="button">버튼</a>
-										<a href="#" class="button">버튼</a>
-									-->
-									
 									</footer>
 								</section>
 							</div>
@@ -89,8 +86,8 @@ S
 						
 						<div class="row" id="row">
 					
-			         
-			         <%for (int i = 0; i < list.size(); i++) {%>
+		         
+<%-- 			         <%for (int i = 0; i < list.size(); i++) {%>
 					
 					<article>
 						<% String place_name=request.getParameter("name"); %>
@@ -101,11 +98,12 @@ S
 							<h3><a href="#"><%=list.get(i).getPlace_name() %></a></h3>
 						</header>
 						<p>
-							 <%=list.get(i).getPlace_address() %>
+							<%= list.get(i).getPlace_cat() %>
+							  <%=list.get(i).getPlace_addr() %>
 						</p>
 					</article>
-					<% }%>
-
+					<% }%> 
+ --%>
 					</div>							
 						<br>
 						<br>
@@ -273,11 +271,26 @@ S
 			      $('#all').click(function(){
 			    	  btnInput('전체');
 			      });
-			      $('#seoul').click(function(){
-			    	  btnInput('서울 강동구');
+			      $('#gwangyeogsi').click(function(){
+			    	  btnInput('광역시');
 			      });
-			      $('#gwangju').click(function(){
-			    	  btnInput('광주 임암동');
+			      $('#gyeonggido').click(function(){
+			    	  btnInput('경기도');
+			      });
+			      $('#jeonlado').click(function(){
+			    	  btnInput('전라도');
+			      });
+			      $('#gyeongsangdo').click(function(){
+			    	  btnInput('경상도');
+			      });
+			      $('#chungcheongdo').click(function(){
+			    	  btnInput('충청도');
+			      });
+			      $('#gangwondo').click(function(){
+			    	  btnInput('강원도');
+			      });
+			      $('#jejudo').click(function(){
+			    	  btnInput('제주도');
 			      });
 			      
 			      
@@ -289,9 +302,9 @@ S
 			    			dataType : 'JSON',
 			    			success : function(data){
 			    				console.log(data);
-			    				$('#row').empty();
+			    			 	$('#row').empty(); 
 			    				for(var i = 0; i < data.length; i++){
-			    					$('#row').prepend('<article><a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a><header><h3>'+data[i].place_name+'</h3></header><p>'+ data[i].place_address+'</p></article>');
+			    					$('#row').prepend('<article><a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a><header><h3>'+data[i].place_name+'</h3></header><p>'+data[i].place_cat+ data[i].place_addr+'</p></article>');
 			    				}
 			    			}
 			    		});
