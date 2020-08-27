@@ -83,16 +83,16 @@ input[type=submit],input[type=button] {
         <table class="table table-boardered">
             <tr>
                 <th>아이디</th>
-                <td><input type="text" class="form-control" name="id" placeholder="id를 넣으세요"></td>        
+                <td><input type="text" class="form-control" name="id" placeholder="ID를 입력해주세요."></td>        
             </tr>
             <tr>
                 <th>패스워드</th>
-                <td><input type="password" class="form-control" name="pass1" placeholder="비밀번호는 영문만 넣어주세요"></td>      
+                <td><input type="password" class="form-control" name="pass1" placeholder="비밀번호는 영문 또는 숫자로 입력주세요."></td>      
             </tr>
              
             <tr>
                 <th>패스워드확인</th>
-                <td><input type="password" class="form-control" name="pass2"></td>        
+                <td><input type="password" class="form-control" name="pass2" placeholder="다시 입력해주세요."></td>        
             </tr>
              
             <tr>

@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-		<title>Left Sidebar - Helios by HTML5 UP</title>
+		<title>어디 갈래? CHAZA!</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />

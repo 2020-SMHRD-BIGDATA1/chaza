@@ -36,6 +36,9 @@ html, body {width:100%;height:100%;margin:0;padding:0;}
         <span onclick="zoomOut()"><img src="https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/ico_minus.png" alt="축소"></span>
     </div>
 </div>
+<div>
+<a href=# onclick="javascript_:window.open('review_write.jsp','pop', 'menubar=no,status=no,scrollbars=no,resizable=no ,width=1200px,height=800px,top=100,left=450');">이동</a>
+</div>
 
 <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b2f98b9a933cf88853f3d7158a0c56fd"></script>
 <script>
@@ -101,6 +104,8 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
     
     /* var resultDiv = document.getElementById('clickLatlng'); 
     resultDiv.innerHTML = message; */
+    
+    
     
 });
 </script>

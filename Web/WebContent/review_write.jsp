@@ -19,41 +19,30 @@
 =======
 
 html, body {width:100%;height:100%;margin:0;padding:0;} 
-.map_wrap {position:relative;overflow:hidden;width:60%;height:800px;margin-left: 20%;margin-right: 20%;margin-top: 5%;}
-.radius_border{border:1px solid #919191;border-radius:5px;}     
-.custom_typecontrol {position:absolute;top:10px;right:10px;overflow:hidden;width:130px;height:30px;margin:0;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;}
-.custom_typecontrol span {display:block;width:65px;height:30px;float:left;text-align:center;line-height:30px;cursor:pointer;margin:-0.5px;}
-.custom_typecontrol .btn {background:#fff;background:linear-gradient(#fff,  #e6e6e6);}       
-.custom_typecontrol .btn:hover {background:#f5f5f5;background:linear-gradient(#f5f5f5,#e3e3e3);}
-.custom_typecontrol .btn:active {background:#e6e6e6;background:linear-gradient(#e6e6e6, #fff);}    
-.custom_typecontrol .selected_btn {color:#fff;background:#425470;background:linear-gradient(#425470, #5b6d8a);}
-.custom_typecontrol .selected_btn:hover {color:#fff;}   
-.custom_zoomcontrol {position:absolute;top:50px;right:10px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
-.custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
-.custom_zoomcontrol span img {width:15px;height:15px;padding:12px 0;border:none;}             
-.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}  
-
->>>>>>> branch 'master' of https://github.com/2eunji/chaza.git
+             
+             
 	form { 
 	        margin: 0 auto; 
 	
-	        width:60%;
-	
+	        width:100%;
+				
 	    }
 
 	 body {    
     font-family: 나눔바른고딕, NanumBarunGothic, 맑은고딕, "Malgun Gothic", 돋움, Dotum, "Apple SD Gothic Neo", sans-serif;
-    font-size: 12px;
+    font-size: 16px;
+    font-weight: blod;
     color: rgb(33, 33, 33);
     letter-spacing: 0.03em;
 }
 
 table {
     width: 600px;
+    margin-top:-2%;
 }
 
 tr {
-    height: 50px;
+    height: 1em;
 }
 
 input[type=text], input[type=password] {
@@ -98,19 +87,19 @@ input[type=submit]:hover {
 .form textarea{
     margin-top: 10px;
     height: 220px;
-    width: 500px; 
+    width: 100%; 
     line-height: 100px;
     padding: 5px, 10px; /* 상하 우좌 */
-    background: #E6E6E6;
+    background: #fff;
     color: black;
-    font-size: 15px;
+    font-size: 16px;
     font-weight: normal;
     letter-spacing: 1px;
-    border: none;
+    border: 1px solid #999;
     cursor: pointer;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    border-radius: 10px;
 }
 
 	
@@ -121,7 +110,7 @@ input[type=submit]:hover {
 .star-input{display:inline-block; white-space:nowrap;width:225px;height:40px;padding:25px;line-height:30px;}
 .star-input>.input{display:inline-block;width:150px;background-size:150px;height:28px;white-space:nowrap;overflow:hidden;position: relative;}
 .star-input>.input>input{position:absolute;width:1px;height:1px;opacity:0;}
-star-input>.input.focus{outline:1px dotted #ddd;}
+.star-input>.input.focus{outline:1px dotted #ddd;}
 .star-input>.input>label{width:30px;height:0;padding:28px 0 0 0;overflow: hidden;float:left;cursor: pointer;position: absolute;top: 0;left: 0;}
 .star-input>.input>label:hover,
 .star-input>.input>input:focus+label,
@@ -133,6 +122,20 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 .star-input>.input>label[for="p4"]{width:120px;z-index:2;}
 .star-input>.input>label[for="p5"]{width:150px;z-index:1;}
 .star-input>output{display:inline-block;width:60px; font-size:18px;text-align:right; vertical-align:middle;}
+
+.map_wrap {position:relative;overflow:hidden;width:50%;margin-left:5%;height:800px;border: #999 solid 1px;}
+.radius_border{border:1px solid #919191;border-radius:5px;}     
+.custom_typecontrol {position:absolute;top:10px;right:10px;overflow:hidden;width:130px;height:30px;margin:0;padding:0;z-index:1;font-size:12px;font-family:'Malgun Gothic', '맑은 고딕', sans-serif;}
+.custom_typecontrol span {display:block;width:65px;height:30px;float:left;text-align:center;line-height:30px;cursor:pointer;margin:-0.5px;}
+.custom_typecontrol .btn {background:#fff;background:linear-gradient(#fff,  #e6e6e6);}       
+.custom_typecontrol .btn:hover {background:#f5f5f5;background:linear-gradient(#f5f5f5,#e3e3e3);}
+.custom_typecontrol .btn:active {background:#e6e6e6;background:linear-gradient(#e6e6e6, #fff);}    
+.custom_typecontrol .selected_btn {color:#fff;background:#425470;background:linear-gradient(#425470, #5b6d8a);}
+.custom_typecontrol .selected_btn:hover {color:#fff;}   
+.custom_zoomcontrol {position:absolute;top:50px;right:10px;width:36px;height:80px;overflow:hidden;z-index:1;background-color:#f5f5f5;} 
+.custom_zoomcontrol span {display:block;width:36px;height:40px;text-align:center;cursor:pointer;}     
+.custom_zoomcontrol span img {width:15px;height:15px;padding:0px;border:none;margin:10px}
+.custom_zoomcontrol span:first-child{border-bottom:1px solid #bfbfbf;}
 </style>
 </head>
 <body class="no-sidebar is-preload">
@@ -151,9 +154,90 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 				</div>
 			</div>
 			<!-- Main -->
-<
-<div class="map_wrap">
-    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;"></div> 
+
+
+<div class="wrapper style1">
+
+<div class="container" style="width:90%;">
+
+       
+<form method="post"  action="reviews_cat.jsp">
+						
+    <table style="float:left;width:50%">
+    	<tr>
+    		<td style='width:100px'>평점</td>
+    		<td style="margin-top:5em; margin-bottom: 5em;">
+		        <span class="star-input">
+				    <span class="input">
+				    	<input type="radio" name="star-input" value="1" id="p1">
+				    	<label for="p1">1</label>
+				    	<input type="radio" name="star-input" value="2" id="p2">
+				    	<label for="p2">2</label>
+				    	<input type="radio" name="star-input" value="3" id="p3">
+				    	<label for="p3">3</label>
+				    	<input type="radio" name="star-input" value="4" id="p4">
+				    	<label for="p4">4</label>
+				    	<input type="radio" name="star-input" value="5" id="p5">
+				    	<label for="p5">5</label>
+		  			</span>
+		  		<output for="star-input"><b>0</b>점</output>						
+				</span>
+			</td>
+		</tr>
+        <tr>
+            <td style='width:100px'>아이디</td>
+            <td>롸</td>
+        </tr>
+        <tr>
+            <td>여행지</td>
+            <td style="width:80%;"><input type="text" size=30 name="place" value=""></td>
+        </tr>
+        <tr>
+            <td>출발지</td>
+            <td style="width:80%;"><input type="text" size=30 name="place1" value=""></td>
+        </tr>
+        <tr>
+            <td>목적지</td>
+            <td style="width:80%;"><input type="text" size=30 name="Password"></td>
+        </tr>
+        
+        <tr>
+            <td>소요시간</td>
+            <td><input type="number" step=0.1 min=0 size=30 name="rePassword">&nbsp 시간</td>
+        </tr>
+        
+        <tr>
+            <td>휴식시간</td>
+            <td><input type="number" step=0.1 min=0 size=30 name="rePassword">&nbsp 시간</td>
+        </tr>
+        <tr>
+            <td>사진업로드</td>
+				<td><label for="ex_filename"></label> <input type="file" id="ex_filename" class="upload-hidden"> </td>
+				
+        </tr>
+           <tr>
+            <td>제목</td>
+             
+			<td style="width:80%;"><input type="text" name="rePassword"><td>
+        </tr>    
+         <tr>
+            <td>리뷰작성하기</td>
+             
+			<td>
+				<div class="form">
+					<textarea color=black name="message" rows="10" cols="30" style="resize:none;" placeholder="내용을 작성해주세요." ></textarea>
+				</div>
+			</td>
+        </tr>
+        <tr>
+            <td colspan='2' align='center'><input type="submit" value="작성하기" id="writebnt"  onclick="popupy()"></td>
+        </tr>
+        
+    </table>
+</form>
+        <!-- 이건 그냥 팝업 <button onclick="window.open('address','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">button</button> -->
+        <div class="map_wrap">
+    <div id="map" style="width:100%;height:100%;position:relative;overflow:hidden;float:left;"></div> 
     <!-- 지도타입 컨트롤 div 입니다 -->
     <div class="custom_typecontrol radius_border">
         <span id="btnRoadmap" class="selected_btn" onclick="setMapType('roadmap')">지도</span>
@@ -171,7 +255,7 @@ star-input>.input.focus{outline:1px dotted #ddd;}
 var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
     mapOption = { 
         center: new kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-        level: 3 // 지도의 확대 레벨
+        level: 12 // 지도의 확대 레벨
     };  
 
 var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
@@ -233,95 +317,13 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
     
 });
 </script>
-				<div class="wrapper style1">
-<div class="container">
-
-       
-<form method="post"  action="reviews_cat.jsp">
-						
-    <table>
-    	<tr>
-        <span class="star-input">
-	    <span class="input">
-    	<input type="radio" name="star-input" value="1" id="p1">
-    	<label for="p1">1</label>
-    	<input type="radio" name="star-input" value="2" id="p2">
-    	<label for="p2">2</label>
-    	<input type="radio" name="star-input" value="3" id="p3">
-    	<label for="p3">3</label>
-    	<input type="radio" name="star-input" value="4" id="p4">
-    	<label for="p4">4</label>
-    	<input type="radio" name="star-input" value="5" id="p5">
-    	<label for="p5">5</label>
-  	</span>
-  	
-  	<output for="star-input"><b>0</b>점</output>						
-</span>
-
-		
-        </tr>  
-        <tr>
-            <td style='width:100px'>아이디</td>
-            <td>롸</td>
-        </tr>
-        <tr>
-            <td>여행지</td>
-            <td>
-                <input type="text" size=37 name="place" value="">
-                
-            </td>
-        </tr>
-        <tr>
-            <td>출발지</td>
-            <td><input type="text" size=37 name="place1" value=""></td>
-        </tr>
-        <tr>
-            <td>목적지</td>
-            <td><input type="text" size=37 name="Password"></td>
-        </tr>
-        
-        <tr>
-            <td>소요시간</td>
-            <td><input type="number" step=0.1 min=0 size=30 name="rePassword">시간</td>
-        </tr>
-        
-        <tr>
-            <td>휴식시간</td>
-            <td><input type="number" step=0.1 min=0 size=30 name="rePassword">시간</td>
-        </tr>
-        <tr>
-            <td>사진업로드</td>
-				<td><label for="ex_filename"></label> <input type="file" id="ex_filename" class="upload-hidden"> </td>
-				
-        </tr>
-           <tr>
-            <td>제목</td>
-             
-			<td><input type="text" name="rePassword"><td>
-        </tr>    
-         <tr>
-            <td>리뷰작성하기</td>
-             
-			<td>
-			<div class="form">
-			<textarea color=black name="message" rows="10" cols="30" >작성하세요.</textarea><td>
-        </tr>      
-        
-        <!-- 이건 그냥 팝업 <button onclick="window.open('address','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">button</button> -->
-        <tr>
-            <td colspan='2' align='center'><input type="submit" value="작성하기" id="writebnt"  onclick="popupy()">
-     
-            </td>
-        </tr>
-    </table>
-</form>
+</div>
+<div style="margin-top:2%;">
+	<hr/>
+	<br><br>
+	<center><a href="reviews_cat.jsp" class="button">돌아가기</a></center>
 </div>
 
-						<hr />
-						<br><br>
-<center><a href="reviews_cat.jsp" class="button">돌아가기</a></center>
-
-				</div>
 
 
 					
