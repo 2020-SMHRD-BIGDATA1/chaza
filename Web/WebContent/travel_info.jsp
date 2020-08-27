@@ -46,7 +46,7 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.jsp">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="right-sidebar.html">여행후기</a></li>
 								<li><a href="#">마이페이지</a></li>
@@ -69,6 +69,7 @@
 									
 									<% PlaceDAO dao= new PlaceDAO();
 									PlaceDTO placedto = dao.getplace(place_name);
+									System.out.print(place_name+1);
 							         	%>
 										<section>
 										<header>
@@ -147,7 +148,7 @@
 										
 										<hr>
 									</header>
-									<a href="#" class="image featured"><img src="images/pic01.jpg" alt="" /></a>
+									<a href="#" class="image featured"><img src="<%=placedto.getPlace_image()%>" alt="" /></a>
 									
 										<section>
 									
@@ -157,7 +158,7 @@
 										<%=placedto.getContents() %>
 									</h5>
 
-									</section>>
+									</section>
 									
 								<!-- 	<section>
 										<header>

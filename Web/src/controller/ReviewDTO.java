@@ -17,9 +17,9 @@ public class ReviewDTO {
 	private String map_long;
 	private String review_image;
 	
-	public ReviewDTO(String review_number, String review_id, String start_location, String dest_location,
+	public ReviewDTO(String review_number, String review_id, String place_name,String review_date,String start_location, String dest_location,
 			String travel_time, String break_time, String review_score, String review_title, String review_contents,
-			String place_name, String review_date, String map_lat, String map_long, String review_image) {
+			String map_lat, String map_long, String review_image) {
 		super();
 		this.review_number = review_number;
 		this.review_id = review_id;
@@ -38,9 +38,9 @@ public class ReviewDTO {
 	}
 	
 	
-	public ReviewDTO(String review_id, String start_location, String dest_location,
+	public ReviewDTO(String review_number, String review_id, String place_name,String review_date,String start_location, String dest_location,
 			String travel_time, String break_time, String review_score, String review_title, String review_contents,
-			String place_name, String review_date, String review_image) {
+			String review_image) {
 		super();
 		this.review_id = review_id;
 		this.start_location = start_location;

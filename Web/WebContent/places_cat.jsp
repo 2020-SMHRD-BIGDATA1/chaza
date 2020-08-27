@@ -37,7 +37,7 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.jsp">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
 								<li><a href="form_mypage.jsp">마이페이지</a></li>
@@ -294,7 +294,7 @@
 			    			     $('#head').prepend('<center><h2>'+name+'</h2></center>');
 			    			     
 			    				for(var i = 0; i < data.length; i++){
-			    					$('#row').prepend('<article><a href="'+encodeURI("travel_info.jsp?name="+data[i].place_name) +'"  class="image featured"><img src="images/pic08.jpg" alt="" /></a><header><h3>'+data[i].place_name+'</h3></header><p>'+data[i].place_cat+ data[i].place_addr+'</p></article>');
+			    					$('#row').prepend('<article><a href="'+encodeURI("travel_info.jsp?name="+data[i].place_name) +'"  class="image featured"><img src="'+data[i].place_image+'" alt="" /></a><header><h3>'+data[i].place_name+'</h3></header><p>'+data[i].place_cat+ data[i].place_addr+'</p></article>');
 			    				}
 			    			}
 			    		});

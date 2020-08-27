@@ -12,9 +12,13 @@ public class PlaceDTO {
 	private String title;
 	private String contents;
 	private String place_score;
+	private String place_lat;
+	private String place_lng;
+	private String place_image;
 	
 	public PlaceDTO(String place_id, String place_name, String place_cat, String place_addr, String toilet, String sink,
-			String water, String title, String contents, String place_score) {
+			String water, String title, String contents, String place_score, String place_lat, String place_lng,
+			String place_image) {
 		super();
 		this.place_id = place_id;
 		this.place_name = place_name;
@@ -26,6 +30,9 @@ public class PlaceDTO {
 		this.title = title;
 		this.contents = contents;
 		this.place_score = place_score;
+		this.place_lat = place_lat;
+		this.place_lng = place_lng;
+		this.place_image = place_image;
 	}
 
 	public String getPlace_id() {
@@ -107,7 +114,31 @@ public class PlaceDTO {
 	public void setPlace_score(String place_score) {
 		this.place_score = place_score;
 	}
+
+	public String getPlace_lat() {
+		return place_lat;
+	}
+
+	public void setPlace_lat(String place_lat) {
+		this.place_lat = place_lat;
+	}
+
+	public String getPlace_lng() {
+		return place_lng;
+	}
+
+	public void setPlace_lng(String place_lng) {
+		this.place_lng = place_lng;
+	}
+
+	public String getPlace_image() {
+		return place_image;
+	}
+
+	public void setPlace_image(String place_image) {
+		this.place_image = place_image;
+	}
 	
-	
+
 	
 	}
