@@ -47,13 +47,14 @@ input[type=text]:focus, input[type=password]:focus {
 
 input[type=submit],input[type=button] {
     margin-top: 10px;
-    width:100px;
+    width:130px;
     height:40px;
     line-height: 22px;
     padding: 5px, 10px; /* 상하 우좌 */
     background: #E6E6E6;
     color: #000000;
     font-size: 15px;
+    
     font-weight: normal;
     letter-spacing: 1px;
     border: none;
@@ -76,7 +77,7 @@ input[type=submit]:hover {
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="#" id="logo"></a></h1>
+								<h1><a href="#" id="logo"></a>로그인</h1>
 							</header>
 						</div>
 				</div>
@@ -87,18 +88,18 @@ input[type=submit]:hover {
 </div>
 
 <div class="container" align='center'>
-<h2 align="center">로그인</h2>
-<br><br><br>
-<form method="post" action="a.register.php">
+<h2 align="center"></h2>
+<br>
+<form method="post" action="LoginService">
     <table>
         <tr>
             <td style='width:100px'>아이디</td>
-            <td><input type="text" size=37 name="userNM" value=""></td>
+            <td><input type="text" size=37 name="member_id" value=""></td>
         </tr>
        
         <tr>
             <td>패스워드</td>
-            <td><input type="password" size=37 name="mobileNO" value=""></td>
+            <td><input type="password" size=37 name="member_pw" value=""></td>
         </tr>
         
         
@@ -112,8 +113,8 @@ input[type=submit]:hover {
 </div>
 
 	
-	<center><a href="#" class="button">로그인</a>
-			<a href="#" class="button">취소</a>
+	<center><input type="submit" value="로그인" class="button fit">&nbsp;&nbsp;&nbsp;&nbsp;			
+			<input type="button" value="회원가입" class="button fit">
 	</center>
 
 </div>

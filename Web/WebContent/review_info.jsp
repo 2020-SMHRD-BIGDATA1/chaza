@@ -59,7 +59,7 @@
 					<!-- Nav -->
 						<nav id="nav">
 							<ul>
-								<li><a href="index.html">Home</a></li>
+								<li><a href="index.jsp">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
 								<li><a href="form_mypage.jsp">마이페이지</a></li>

@@ -58,7 +58,7 @@ input[type=submit],input[type=button] {
 					<!-- Inner -->
 						<div class="inner">
 							<header>
-								<h1><a href="#" id="logo"></a></h1>
+								<h1><a href="#" id="logo">회원가입</a></h1>
 							</header>
 						</div>
 				</div>
@@ -75,78 +75,76 @@ input[type=submit],input[type=button] {
     <div class="row">
     <div class="col-sm-12 text-left" >
     <div class="col-sm-3"></div>
-     
     <div class="col-sm-6">
-    <h2 align="center">회원가입</h2>
-    <br><br><br>
-    <form action="MemberJoinProc.jsp" method="post">
+    <br>
+    <form action="JoinService" method="post">
         <table class="table table-boardered">
             <tr>
                 <th>아이디</th>
-                <td><input type="text" class="form-control" name="id" placeholder="ID를 입력해주세요."></td>        
+
+                <td><input type="text" class="form-control" name="member_id" placeholder="id를 입력하세요"></td>        
             </tr>
             <tr>
                 <th>패스워드</th>
-                <td><input type="password" class="form-control" name="pass1" placeholder="비밀번호는 영문 또는 숫자로 입력주세요."></td>      
+                <td><input type="password" class="form-control" name="member_pw" placeholder="비밀번호를 입력하세요"></td>      
             </tr>
-             
             <tr>
                 <th>패스워드확인</th>
                 <td><input type="password" class="form-control" name="pass2" placeholder="다시 입력해주세요."></td>        
             </tr>
-             
+
             <tr>
                 <th>주소</th>
-                <td><input type="email" class="form-control" name="email"></td>       
+                <td><input type="text" class="form-control" name="member_addr"></td>       
             </tr>
              
             <tr>
                 <th>연락처</th>
-                <td><input type="tel" class="form-control" name="tel"></td>       
+                <td><input type="tel" class="form-control" name="member_tel"></td>       
             </tr>
             <tr>
                 <th>성별</th>
                 <td>
-                <input type="radio"  name="age" value="10">남성 &nbsp;&nbsp;
-                <input type="radio"  name="age" value="20">여성 &nbsp;&nbsp;
+                <input type="radio"  name="member_gender" value="male">남성 &nbsp;&nbsp;
+                <input type="radio"  name="member_gender" value="female">여성 &nbsp;&nbsp;
               
                 </td>     
             </tr>
             <tr>
                 <th>캠핑목적</th>
                 <td>
-                <input type="checkbox"  name="hobby" value="캠핑">가족간의 화합도모 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="등산">스트레스해소와 힐링 &nbsp;&nbsp;
+                <input type="radio"  name="camping_case" value="case_family">가족간의 화합도모 &nbsp;&nbsp;
+                <input type="radio"  name="camping_case" value="case_healing">스트레스해소와 힐링 &nbsp;&nbsp;
                 <br>
-                <input type="checkbox"  name="hobby" value="영화">지인들과의 친목 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="독서">자연 체험활동 &nbsp;&nbsp;
+                <input type="radio"  name="camping_case" value="case_friend">지인들과의 친목 &nbsp;&nbsp;
+                <input type="radio"  name="camping_case" value="case_nature">자연 체험활동 &nbsp;&nbsp;
                 <br>
-                <input type="checkbox"  name="hobby" value="독서">단순 취미활동 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="독서">단순 취미활동 &nbsp;&nbsp;
+                <input type="radio"  name="camping_case" value="case_hobby">단순 취미활동 &nbsp;&nbsp;
+               
                 </td>     
             </tr>
             
             <tr>
                 <th>캠핑동행자</th>
                 <td>
-                <input type="checkbox"  name="hobby" value="캠핑">가족 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="등산">친구 및 선후배 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="영화">애인 &nbsp;&nbsp;
+                <input type="radio"  name="camping_member" value="member_family">가족 &nbsp;&nbsp;
+                <input type="radio"  name="camping_member" value="member_friend">친구 및 선후배 &nbsp;&nbsp;
+                <input type="radio"  name="camping_member" value="member_ain">애인 &nbsp;&nbsp;
                 <br>
-                <input type="checkbox"  name="hobby" value="독서">혼자 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="독서">친인척 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="독서">동호회/커뮤니티 &nbsp;&nbsp;
+                <input type="radio"  name="camping_member" value="member_alone">혼자 &nbsp;&nbsp;
+                <input type="radio"  name="camping_member" value="member_chin">친인척 &nbsp;&nbsp;
+                <input type="radio"  name="camping_member" value="member_dong">동호회/커뮤니티 &nbsp;&nbsp;
                 </td>     
             </tr>
             
             <tr>
                 <th>연간 캠핑횟수</th>
                 <td>
-                <input type="checkbox"  name="hobby" value="캠핑">10회이상 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="등산">10회 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="영화">5-10회 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="독서">2-4회 &nbsp;&nbsp;
-                <input type="checkbox"  name="hobby" value="독서">1회 &nbsp;&nbsp;
+                <input type="radio"  name="camping_count" value="1">10회이상 &nbsp;&nbsp;
+                <input type="radio"  name="camping_count" value="2">10회 &nbsp;&nbsp;
+                <input type="radio"  name="camping_count" value="3">5-10회 &nbsp;&nbsp;
+                <input type="radio"  name="camping_count" value="4">2-4회 &nbsp;&nbsp;
+                <input type="radio"  name="camping_count" value="5">1회 &nbsp;&nbsp;
                 
                 </td>     
             </tr>
@@ -154,28 +152,24 @@ input[type=submit],input[type=button] {
             <tr>
                 <th>차량유무</th>
                 <td>
-                 <select name="job" class="form-control">
-                    <option value="교사">있음</option>
-                    <option value="변호사">없음</option>
+                <input type="radio"  name="member_car_own" value="y">있음 &nbsp;&nbsp;
+                <input type="radio"  name="member_car_own" value="n">없음 &nbsp;&nbsp;
+                 <!-- select name="member_car_own" class="form-control">
+                    <option value="y">있음</option>
+                    <option value="n">없음</option>
                     
-                 </select>
+                 </select> -->
                 </td>     
             </tr>
             
             <tr>
                 <th>차종</th>
-                <td><input type="tel" class="form-control" name="tel"></td>       
+                <td><input type="text" class="form-control" name="car_name"></td>       
             </tr>
-             
-                         
-            
-             
-            
              
              <tr>
              	<td colspan="2" align="center">
             	<input type="submit" value="회원가입">
-            	<input type="submit" value="취소">
             	</td>
         	</tr>
         	
@@ -191,10 +185,7 @@ input[type=submit],input[type=button] {
     </div>
 </div>
 
-
-
 	<hr />
-	<center><a href="#" class="button">돌아가기</a></center>
 
 </div>
 
