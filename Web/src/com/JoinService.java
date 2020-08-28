@@ -32,8 +32,7 @@ public class JoinService extends HttpServlet {
 		String camping_member = request.getParameter("camping_member");
 		String camping_count = request.getParameter("camping_count");
 		
-		System.out.println(camping_count);
-		System.out.println(member_gender);
+		
 		controller.MemberDTO dto = new controller.MemberDTO(member_id, member_pw, member_gender, member_tel, member_addr, member_car_own, member_car_model, camping_case, camping_member, camping_count);
 		controller.MemberDAO dao = new controller.MemberDAO();
 		int cnt = dao.join(dto);

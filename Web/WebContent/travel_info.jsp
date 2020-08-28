@@ -1,3 +1,4 @@
+<%@page import="controller.MemberDTO"%>
 <%@page import="controller.PlaceDTO"%>
 <%@page import="controller.PlaceDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -28,6 +29,9 @@
 		</style>
 </head>
 	<body class="left-sidebar is-preload">
+	<% 
+		MemberDTO info = (MemberDTO)session.getAttribute("info");
+		%>
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -48,8 +52,16 @@
 							<ul>
 								<li><a href="index.jsp">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
-								<li><a href="right-sidebar.html">여행후기</a></li>
-								<li><a href="#">마이페이지</a></li>
+								<li><a href="reviews_cat.jsp">여행후기</a></li>
+							
+								<li>
+								<% if(info==null){ %>
+									<a href="form_login.jsp">로그인</a>
+								<% } else { %>
+									<li><a href="LogoutService">로그아웃</a></li>
+									<li><a href="form_mypage.jsp">마이페이지</a></li>
+									
+								<% } %>	
 							</ul>
 						</nav>
 

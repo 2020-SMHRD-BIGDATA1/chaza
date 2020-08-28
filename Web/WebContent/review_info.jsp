@@ -1,3 +1,4 @@
+<%@page import="controller.MemberDTO"%>
 <%@page import="controller.ReviewDTO"%>
 <%@page import="controller.ReviewDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -44,6 +45,9 @@
 		</style>
 </head>
 <body class="no-sidebar is-preload">
+<%
+			MemberDTO infoo = (MemberDTO)session.getAttribute("info");
+		%>
 			<div id="page-wrapper">
 
 			<!-- Header -->
@@ -62,7 +66,15 @@
 								<li><a href="index.jsp">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
-								<li><a href="form_mypage.jsp">마이페이지</a></li>
+							
+								<li>
+								<% if(infoo==null){ %>
+									<a href="form_login.jsp">로그인</a>
+								<% } else { %>
+									<li><a href="LogoutService">로그아웃</a></li>
+									<li><a href="form_mypage.jsp">마이페이지</a></li>
+									
+								<% } %>	
 							</ul>
 						</nav>
 
@@ -77,7 +89,6 @@
 							<% String num=request.getParameter("num"); %>
 								<% ReviewDAO reviewdao = new ReviewDAO();
 								System.out.println(reviewdao);
-							
 									ReviewDTO info = reviewdao.getinfo(num);
 									%>
 		
@@ -85,7 +96,7 @@
 						<!-- 주소 -->		<h3><%= info.getPlace_name() %></h3>
 							
 							</header>
-							<a href="#" class="image featured" ><img src="images/test.PNG" alt="" /></a>
+							<a href="#" class="image featured" ><img src="<%=info.getReview_image() %>" alt="" /></a>
 							
 								<h3>여행지 별점: <%= info.getReview_score() %></h3>
 							<br>
@@ -101,7 +112,7 @@
 								<tr>
 									<td><%= info.getReview_id() %></td>
 									<td><%= info.getReview_date() %></td>
-									<td><%= info.getTravel_time()%></td>
+									<td><%= info.getTravel_time()%>시간</td>
 								</tr>
 								
 							
@@ -114,7 +125,7 @@
 								<tr>
 									<td><%= info.getStart_location() %></td>
 									<td><%= info.getDest_location()%></td>
-									<td><%= info.getBreak_time()%></td>
+									<td><%= info.getBreak_time()%>시간</td>
 								</tr>
 								
 							</table>

@@ -87,10 +87,9 @@ DROP SEQUENCE REVIEW_NUM
 create sequence review_num
 	start with 1
 	increment by 1
-insert into review values(1,'BORADORI','용담폭포',SYSDATE,'서울특별시 성동구 천호동','광주광역시 광천동',5,4,4,'이곳은 어디인가','제발 실행됐으면 좋겠다 제발 진짜루',36.123123,128.789789,'images/place_100.jpg');
-insert into review values(2,'SILVER','홍천강 마곡유원지',SYSDATE,'서울특별시 성동구 천호동','광주광역시 광천동',1,2,3,'놀러가고싶다!','프로젝트끝나고 코로나때문에 못간다 !',36.123123,128.789789,'images/place_11.jpg');
-insert into review values(3,'BORADORI','용담폭포',SYSDATE,'서울특별시 성동구 천호동','광주광역시 광천동',5,4,4,'이곳은 어디인가','제발 실행됐으면 좋겠다 제발 진짜루',36.123123,128.789789,'images/place_100.jpg');
-insert into review values(4,'BORADORI','용담폭포',SYSDATE,'서울특별시 성동구 천호동','광주광역시 광천동',5,4,4,'이곳은 어디인가','제발 실행됐으면 좋겠다 제발 진짜루',36.123123,128.789789,'images/place_100.jpg');
+insert into review values(1,'BORADORI','홍천 개야리 홍천강변',SYSDATE,'서울특별시 성동구 천호동','강원 홍천군 서면 개야리 산',5,4,2,'무더위에 힐링여행다녀오기!','개야리유원지는 미루나무길이 있어서 산책하기 좋아요~',37.69548521,127.6407062,'images/place_40.jpg');
+insert into review values(2,'SOO','이포보 오토캠핑장 주변 남한강변',SYSDATE,'경남 창원시 의창구','경기 여주시 대신면 당남리',4,3,1,'바쁜일상 아이들과 추억쌓기','조용하고 한적해 아이들과 함께 오기 좋은 곳이에요',37.38759367,127.5460139,'images/place_14.jpg');
+insert into review values(3,'SILVER','강과 바다가 만나는 곳',SYSDATE,'경기 평택시 서탄면','경북 경주시 양북면',5,2,2,'푸른바다가 인상깊은 곳','날씨도 좋아 아이들과 함께 즐거운 여행하고 왔네요 ㅎㅎ',35.74246819,129.4834412,'images/place_108.jpg');
 
 --사용자 특성 테이블 생성
 create table feature(

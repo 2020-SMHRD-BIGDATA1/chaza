@@ -1,3 +1,4 @@
+<%@page import="controller.MemberDTO"%>
 <%@page import="controller.ReviewDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="controller.ReviewDAO"%>
@@ -25,6 +26,10 @@
 		</style>
 </head>
 	<body class="right-sidebar is-preload">
+	<%
+			MemberDTO info = (MemberDTO)session.getAttribute("info");
+		%>
+			
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -61,7 +66,15 @@
 								<li><a href="index.jsp">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
-								<li><a href="form_mypage.jsp">마이페이지</a></li>
+							
+								<li>
+								<% if(info==null){ %>
+									<a href="form_login.jsp">로그인</a>
+								<% } else { %>
+									<li><a href="LogoutService">로그아웃</a></li>
+									<li><a href="form_mypage.jsp">마이페이지</a></li>
+									
+								<% } %>	
 							</ul>
 						</nav>
 
@@ -90,7 +103,7 @@
 						 <% String num=list.get(i).getReview_number(); %>
 						
 							<article class="col-4 col-12-mobile special">
-								<a href="review_info.jsp?num=<%=num%>" class="image featured"><img src="images/gil.PNG" alt="" /></a>
+								<a href="review_info.jsp?num=<%=num%>" class="image featured"><img src="<%=list.get(i).getReview_image() %>" alt="" /></a>
 								<table>
 									<tr>
 										<th align="left"><%= list.get(i).getReview_id() %></th>

@@ -39,7 +39,7 @@
 								<hr />
 							</header>
 							<footer>
-								<a href="#" class="button circled scrolly">Start</a>
+								<a href="ana2.jsp" class="button circled scrolly">Start</a>
 							</footer>
 						</div>
 
@@ -52,9 +52,9 @@
 							
 								<li>
 								<% if(info==null){ %>
-									<a href="form_login.jsp">로그인</a></li>
+									<a href="form_login.jsp">로그인</a>
 								<% } else { %>
-									<li><a href="#">로그아웃</a></li>
+									<li><a href="LogoutService">로그아웃</a></li>
 									<li><a href="form_mypage.jsp">마이페이지</a></li>
 									
 								<% } %>	
@@ -103,7 +103,7 @@
 						</article>
 
 						<article>
-							<a href="travel_info.jsp?name=<%=URLEncoder.encode("압록유원지", "UTF-8") %>" class="image featured"><img src="images/place_3.jpg" alt="" /></a>
+							<a href="travel_info.jsp?name=<%=URLEncoder.encode("곡성 압록유원지", "UTF-8") %>" class="image featured"><img src="images/place_3.jpg" alt="" /></a>
 							<header>
 								<h3>압록유원지</a></h3>
 							</header>
@@ -111,7 +111,7 @@
 						</article>
 
 						<article>
-							<a href="travel_info.jsp?name=<%=URLEncoder.encode("앵두공원", "UTF-8") %>" class="image featured"><img src="images/place_4.jpg" alt="" /></a>
+							<a href="travel_info.jsp?name=<%=URLEncoder.encode("함평 앵두공원", "UTF-8") %>" class="image featured"><img src="images/place_4.jpg" alt="" /></a>
 							<header>
 								<h3>앵두공원</a></h3>
 							</header>
@@ -119,7 +119,7 @@
 						</article>
 						
 						<article>
-							<a href="travel_info.jsp?name=<%=URLEncoder.encode("솔밭유원지 주차장 인근", "UTF-8") %>" class="image featured"><img src="images/place_5.jpg" alt="" /></a>
+							<a href="travel_info.jsp?name=<%=URLEncoder.encode("나주 드들강 솔밭유원지 주차장 부근", "UTF-8") %>" class="image featured"><img src="images/place_5.jpg" alt="" /></a>
 							<header>
 								<h3>솔밭유원지 주차장 인근</a></h3>
 							</header>
@@ -129,7 +129,7 @@
 						
 												
 						<article>
-							<a href="travel_info.jsp?name=<%=URLEncoder.encode("약산 가사동백숲 방파제", "UTF-8") %>" class="image featured"><img src="images/place_6.jpg" alt="" /></a>
+							<a href="travel_info.jsp?name=<%=URLEncoder.encode("완도 약산 가사동백숲 방파제", "UTF-8") %>" class="image featured"><img src="images/place_6.jpg" alt="" /></a>
 							<header>
 								<h3>약산 가사동백숲 방파제</a></h3>
 							</header>
@@ -138,16 +138,16 @@
 						
 												
 						<article>
-							<a href="travel_info.jsp?name=<%=URLEncoder.encode("녹동 소록대교 밑", "UTF-8") %>" class="image featured"><img src="images/place_7.jpg" alt="" /></a>
+							<a href="travel_info.jsp?name=<%=URLEncoder.encode("노루벌 야영장", "UTF-8") %>" class="image featured"><img src="images/place_7.jpg" alt="" /></a>
 							<header>
-								<h3>녹동 소록대교 밑</a></h3>
+								<h3>노루벌 야영장</a></h3>
 							</header>
-							<p>낚시와 함께하는 즐거움!</p>
+							<p>아이들과 함께하는 캠핑에 최적!</p>
 						</article>
 						
 												
 						<article>
-							<a href="travel_info.jsp?name=<%=URLEncoder.encode("지수리 금강변", "UTF-8") %>" class="image featured"><img src="images/place_8.jpg" alt="" /></a>
+							<a href="travel_info.jsp?name=<%=URLEncoder.encode("옥천 지수리 금강변", "UTF-8") %>" class="image featured"><img src="images/place_9.jpg" alt="" /></a>
 							<header>
 								<h3>지수리 금강변</a></h3>
 							</header>
@@ -156,7 +156,7 @@
 						
 												
 						<article>
-							<a href="travel_info.jsp?name=<%=URLEncoder.encode("마곡유원지", "UTF-8") %>" class="image featured"><img src="images/place_9.jpg" alt="" /></a>
+							<a href="travel_info.jsp?name=<%=URLEncoder.encode("홍천강 마곡유원지", "UTF-8") %>" class="image featured"><img src="images/place_11.jpg" alt="" /></a>
 							<header>
 								<h3>마곡유원지</a></h3>
 							</header>
@@ -167,7 +167,7 @@
 						<article>
 							<a href="travel_info.jsp?name=<%=URLEncoder.encode("옥천 야영장 부근 금강변", "UTF-8") %>" class="image featured"><img src="images/place_10.jpg" alt="" /></a>
 							<header>
-								<h3>옥천 야영장 부근 금강변</a></h3>
+								<h3>옥천야영장 부근 금강변</a></h3>
 							</header>
 							<p>한적하고 조용한 자연 속 쉼터</p>
 						</article>				
@@ -194,7 +194,7 @@
 						</header>
 						<div class="row">
 							<article class="col-4 col-12-mobile special">
-								<a href="review_info.jsp?num=1" class="image featured"><img src="images/gil.PNG" alt="" /></a>
+								<a href="review_info.jsp?num=1" class="image featured"><img src="images/place_40.jpg" alt="" /></a>
 							
 									<table>
 									<tr>
@@ -203,35 +203,47 @@
 										<th align="right">2020-08-25 12:29:52</th>
 									</tr>
 									<tr align="center" >
-										<td colspan="3"><h3>이곳은 어디인가</h3></td>
+										<td colspan="3"><h3>무더위에 힐링여행다녀오기!</h3></td>
 									
 									</tr>
 									<tr align="center">
-										<td colspan="3">제발 실행됐으면 좋겠다 제발 진짜루</td>
+										<td colspan="3">개야리유원지는 미루나무길이 있어서 산책하기 좋아요~</td>
 										
 									</tr>	
 								</table>
 							</article>
+							
 							<article class="col-4 col-12-mobile special">
-								<a href="review_info.jsp?num=2" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+								<a href="review_info.jsp?num=2" class="image featured"><img src="images/place_14.jpg" alt="" /></a>
 								<header>
-									<h3><a href="review_info.jsp?num=2">녕</a></h3>
+									<h3><a href="review_info.jsp?num=3">바쁜일상 아이들과 추억쌓기</a></h3>
 								</header>
 								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
+									조용하고 한적해 아이들과 함께 오기 좋은 곳이에요
 								</p>
 							</article>
+							
 							<article class="col-4 col-12-mobile special">
-								<a href="review_info.jsp?num=3" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
-								<header>
-									<h3><a href="review_info.jsp?num=3">하</a></h3>
-								</header>
-								<p>
-									Amet nullam fringilla nibh nulla convallis tique ante proin sociis accumsan lobortis. Auctor etiam
-									porttitor phasellus tempus cubilia ultrices tempor sagittis. Nisl fermentum consequat integer interdum.
-								</p>
+								<a href="review_info.jsp?num=3" class="image featured"><img src="images/place_108.jpg" alt="" /></a>
+							
+									<table>
+									<tr>
+										<th align="left">SILVER</th>
+										<th></th>
+										<th align="right">2020-08-28 12:29:52</th>
+									</tr>
+									<tr align="center" >
+										<td colspan="3"><h3>푸른바다가 인상깊은 곳</h3></td>
+									
+									</tr>
+									<tr align="center">
+										<td colspan="3">날씨도 좋아 아이들과 함께 즐거운 여행하고 왔네요 ㅎㅎ</td>
+										
+									</tr>	
+								</table>
 							</article>
+							
+						
 						</div>
 					</section>
 
