@@ -7,7 +7,7 @@
 <head>
 <meta charset="EUC-KR">
 <title>Insert title here</title>
-		<title>No Sidebar - Helios by HTML5 UP</title>
+		<title>차박 여행의 모든 것, CHAZA!</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -69,17 +69,18 @@
 									
 									<% PlaceDAO dao= new PlaceDAO();
 									PlaceDTO placedto = dao.getplace(place_name);
-									System.out.print(place_name+1);
+									System.out.print(place_name);
 							         	%>
-										<section>
+										<section style="margin-bottom:0em;">
 										<header>
 											<h3>여행지 별점: <%=placedto.getPlace_score()%></h3>
 										
 										<hr><br><br>
 											<h3>지도보기</h3>
 										</header>
-										<img src="images/pic02.jpg" alt="" />
-										
+											<div>
+											<a href=# class="button" onclick="javascript_:window.open('placeMap.jsp','pop', 'menubar=no,status=no,scrollbars=no,resizable=no ,width=1200px,height=800px,top=100,left=450'); return false;" style ="font-weight:bold;font-size:20px;padding-left:2em;padding-right:2em;letter-spacing:1.2px;background:#32BEBE">Click!</a>
+											</div>				
 									</section>
 								<%-- 	<header>
 										<h3>여행지 별점: <%=placedto.getPlace_score()%></h3>

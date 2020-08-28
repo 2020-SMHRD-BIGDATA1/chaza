@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-		<title>No Sidebar - Helios by HTML5 UP</title>
+		<title>차박 여행의 모든 것, CHAZA!</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -79,8 +79,8 @@ input[type=submit],input[type=button] {
 
 					<!-- Inner -->
 						<div class="inner">
-							<header>
-								<h1><a href="places_cat.jsp" id="logo">마이페이지</a></h1>
+							<header style="font-size:20px;font-weight:bold;">
+								<h1>- MY PAGE -</h1>
 							</header>
 						</div>
 

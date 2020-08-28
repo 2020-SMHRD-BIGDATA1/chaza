@@ -76,6 +76,7 @@ public class ReviewDAO {
 			psmt = conn.prepareStatement(sql);
 			psmt.setString(1, number);
 			rs = psmt.executeQuery();
+			System.out.println(rs);
 			if (rs.next()) {
 				
 			System.out.println(rs.getString(11));

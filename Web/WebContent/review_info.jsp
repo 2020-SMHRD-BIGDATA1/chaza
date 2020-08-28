@@ -76,8 +76,10 @@
 							<header>
 							<% String num=request.getParameter("num"); %>
 								<% ReviewDAO reviewdao = new ReviewDAO();
+								System.out.println(reviewdao);
 							
-									ReviewDTO info = reviewdao.getinfo(num);%>
+									ReviewDTO info = reviewdao.getinfo(num);
+									%>
 		
 						<!-- 타이틀 --> <h2><%= info.getReview_title() %></h2>
 						<!-- 주소 -->		<h3><%= info.getPlace_name() %></h3>

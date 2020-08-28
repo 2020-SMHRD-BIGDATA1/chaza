@@ -6,12 +6,15 @@
 <html>
 <head>
 <meta charset="EUC-KR">
-		<title>No Sidebar - Helios by HTML5 UP</title>
+		<title>차박 여행의 모든 것, CHAZA!</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 <style>
+html {
+	padding:0px;
+	background-color: #fff;}
  body {    
     font-family: 나눔바른고딕, NanumBarunGothic, 맑은고딕, "Malgun Gothic", 돋움, Dotum, "Apple SD Gothic Neo", sans-serif;
     font-size: 12px;
@@ -76,8 +79,8 @@ input[type=submit]:hover {
 				<div id="header">
 					<!-- Inner -->
 						<div class="inner">
-							<header>
-								<h1><a href="#" id="logo"></a>로그인</h1>
+							<header style="font-size:20px;font-weight:bold;">
+								<h1>- L O G I N -</h1>
 							</header>
 						</div>
 				</div>
@@ -87,23 +90,20 @@ input[type=submit]:hover {
 
 </div>
 
-<div class="container" align='center'>
+<div class="container" align='center' style="font-size:16px;">
 <h2 align="center"></h2>
 <br>
 <form method="post" action="LoginService">
     <table>
         <tr>
-            <td style='width:100px'>아이디</td>
+            <td  style="font-weight:bold;color:#333">아이디</td>
             <td><input type="text" size=37 name="member_id" value=""></td>
         </tr>
-       
+
         <tr>
-            <td>패스워드</td>
+            <td style="font-weight:bold;color:#333">패스워드</td>
             <td><input type="password" size=37 name="member_pw" value=""></td>
         </tr>
-        
-        
-        
         
     </table>
     
@@ -113,9 +113,20 @@ input[type=submit]:hover {
 </div>
 
 	
-	<center><input type="submit" value="로그인" class="button fit">&nbsp;&nbsp;&nbsp;&nbsp;			
-			<input type="button" value="회원가입" class="button fit">
+	<center>
+			<input type="submit" style="padding:0px;" value="로그인" class="button fit">			
+			<input type="button" style="padding:0px;" value="회원가입" class="button fit">
 	</center>
+
+	<!-- Footer -->
+				<div id="banner" style="background-color: #313030;margin-top: 14em;padding-top: 1em;padding-bottom: 8em;margin-bottom: -11em;">
+					<div class="container" style="padding-top:20px;padding-bottom:20px;">
+						<img src="img/rent.png" class="rent_text" style="width: 7%;height: 7%;margin-top: 0em;position: relative;float:left;left: 20%;top: 10px;">
+						<span style="font-size: 50px;font-weight: bold;color: #fff;left: -2%;top: 50px;position: relative;width: 120%;">
+						여행지를 찾고싶다면, <span style="color:tomato;">CHAZA!</span></span>
+						</span>
+					</div>
+				</div>
 
 </div>
 
