@@ -108,17 +108,17 @@ input[type=submit]:hover {
     </table>
     
     <br><br><br>
-</fom>
+
 
 </div>
 
 	
 	<center><input type="submit" value="로그인" class="button fit">&nbsp;&nbsp;&nbsp;&nbsp;			
-			<input type="button" value="회원가입" class="button fit">
+			<input  type="button" value="회원가입" class="button fit" onclick="location.href='form_join.jsp'">
 	</center>
 
 </div>
-
+</form>
 
 
 		<!-- Scripts -->

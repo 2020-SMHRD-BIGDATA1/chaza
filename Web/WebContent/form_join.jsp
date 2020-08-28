@@ -88,10 +88,7 @@ input[type=submit],input[type=button] {
                 <th>패스워드</th>
                 <td><input type="password" class="form-control" name="member_pw" placeholder="비밀번호를 입력하세요"></td>      
             </tr>
-            <tr>
-                <th>패스워드확인</th>
-                <td><input type="password" class="form-control" name="pass2" placeholder="다시 입력해주세요."></td>        
-            </tr>
+
 
             <tr>
                 <th>주소</th>

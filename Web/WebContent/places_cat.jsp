@@ -1,3 +1,4 @@
+<%@page import="controller.MemberDTO"%>
 <%@page import="controller.PlaceDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="controller.PlaceDAO"%>
@@ -17,11 +18,20 @@
 				top: 2em;
 				margin-bottom: 5em;
 			}
-			
+			.image img{
+				width: 490px;
+				height: 360px;
+				
+			}
 		</style>
 
 </head>
 	<body class="left-sidebar is-preload">
+				<%
+				MemberDTO info = (MemberDTO)session.getAttribute("info");
+			
+		%>
+			
 		<div id="page-wrapper">
 
 			<!-- Header -->
@@ -40,7 +50,15 @@
 								<li><a href="index.jsp">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
-								<li><a href="form_mypage.jsp">마이페이지</a></li>
+							
+								<li>
+								<% if(info==null){ %>
+									<a href="form_login.jsp">로그인</a>
+								<% } else { %>
+									<li><a href="LogoutService">로그아웃</a></li>
+									<li><a href="form_mypage.jsp">마이페이지</a></li>
+									
+								<% } %>		
 							</ul>
 						</nav>
 
@@ -294,7 +312,7 @@
 			    			     $('#head').prepend('<center><h2>'+name+'</h2></center>');
 			    			     
 			    				for(var i = 0; i < data.length; i++){
-			    					$('#row').prepend('<article><a href="'+encodeURI("travel_info.jsp?name="+data[i].place_name) +'"  class="image featured"><img src="'+data[i].place_image+'" alt="" /></a><header><h3>'+data[i].place_name+'</h3></header><p>'+data[i].place_cat+ data[i].place_addr+'</p></article>');
+			    					$('#row').prepend('<article><a id="imgg" href="'+encodeURI("travel_info.jsp?name="+data[i].place_name) +'"  class="image featured"><img src="'+data[i].place_image+'" alt="" /></a><header><h3>'+data[i].place_name+'</h3></header><p>'+data[i].place_cat+ data[i].place_addr+'</p></article>');
 			    				}
 			    			}
 			    		});

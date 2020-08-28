@@ -93,5 +93,35 @@ public class ReviewDAO {
 		return reviewdto;
 	}
 
+	public int write(ReviewDTO dto) {
 
+		int cnt = 0;
+
+		try {
+			getConnection();
+			String sql = "INSERT INTO REVIEW VALUES(?,?,?,?,?,?,?,?,?)";
+			psmt = conn.prepareStatement(sql);
+			psmt.setString(3, dto.getPlace_name());
+			psmt.setString(5, dto.getStart_location());
+			psmt.setString(6, dto.getDest_location());
+			psmt.setString(7, dto.getTravel_time());
+			psmt.setString(8, dto.getBreak_time());
+			psmt.setString(9, dto.getReview_score());
+			psmt.setString(10, dto.getReview_title());
+			psmt.setString(11, dto.getReview_contents());
+			psmt.setString(14, dto.getReview_image());
+			
+
+			cnt = psmt.executeUpdate();
+
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			close();
+		}
+
+		return cnt;
+	}
+	
+	
 }

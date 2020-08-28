@@ -73,6 +73,9 @@ input[type=submit],input[type=button] {
 </style>
 </head>
 <body class="no-sidebar is-preload">
+<%
+			MemberDTO info = (MemberDTO)session.getAttribute("info");
+		%>
 			<div id="page-wrapper">
 			<!-- Header -->
 				<div id="header">
@@ -90,7 +93,15 @@ input[type=submit],input[type=button] {
 								<li><a href="index.jsp">Home</a></li>
 								<li><a href="places_cat.jsp">여행지정보</a></li>
 								<li><a href="reviews_cat.jsp">여행후기</a></li>
-								<li><a href="#">마이페이지</a></li>
+							
+								<li>
+								<% if(info==null){ %>
+									<a href="form_login.jsp">로그인</a>
+								<% } else { %>
+									<li><a href="LogoutService">로그아웃</a></li>
+									<li><a href="form_mypage.jsp">마이페이지</a></li>
+									
+								<% } %>	
 							</ul>
 						</nav>
 
@@ -110,13 +121,7 @@ input[type=submit],input[type=button] {
     <div class="col-sm-6">
     <br><br>
     <form action="MemberJoinProc.jsp" method="post">
-    
-    <%
-			MemberDTO info = (MemberDTO)session.getAttribute("info");
-    
-    	
-    
-		%>
+
     
               <% if (info == null) { %>
 					<h1>로그인을 해주세요.</h1>

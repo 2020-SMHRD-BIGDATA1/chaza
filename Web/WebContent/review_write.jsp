@@ -1,3 +1,4 @@
+<%@page import="controller.MemberDTO"%>
 <%@page import="controller.ReviewDTO"%>
 <%@page import="controller.ReviewDAO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
@@ -159,73 +160,81 @@ input[type=submit]:hover {
 <div class="wrapper style1">
 
 <div class="container" style="width:90%;">
-
+	<%
+		MemberDTO info = (MemberDTO)session.getAttribute("info");
+    
+		%>
+	  <% if (info == null) { %>
+				<center><h1>로그인을 해주세요.</h1></center>
+				<% } else { %>
+					
        
-<form method="post"  action="reviews_cat.jsp">
-						
+<form method="post"  action="ReviewService">
+
     <table style="float:left;width:50%">
     	<tr>
     		<td style='width:100px'>평점</td>
     		<td style="margin-top:5em; margin-bottom: 5em;">
 		        <span class="star-input">
 				    <span class="input">
-				    	<input type="radio" name="star-input" value="1" id="p1">
+				    	<input type="radio" name="review_score" value="1" id="p1">
 				    	<label for="p1">1</label>
-				    	<input type="radio" name="star-input" value="2" id="p2">
+				    	<input type="radio" name="review_score" value="2" id="p2">
 				    	<label for="p2">2</label>
-				    	<input type="radio" name="star-input" value="3" id="p3">
+				    	<input type="radio" name="review_score" value="3" id="p3">
 				    	<label for="p3">3</label>
-				    	<input type="radio" name="star-input" value="4" id="p4">
+				    	<input type="radio" name="review_score" value="4" id="p4">
 				    	<label for="p4">4</label>
-				    	<input type="radio" name="star-input" value="5" id="p5">
+				    	<input type="radio" name="review_score" value="5" id="p5">
 				    	<label for="p5">5</label>
 		  			</span>
-		  		<output for="star-input"><b>0</b>점</output>						
+		  		<output for="review_score"><b>0</b>점</output>						
 				</span>
 			</td>
 		</tr>
         <tr>
             <td style='width:100px'>아이디</td>
-            <td>롸</td>
+            <td><%=info.getMember_id() %></td>
         </tr>
+        <br>
         <tr>
             <td>여행지</td>
-            <td style="width:80%;"><input type="text" size=30 name="place" value=""></td>
+            <td style="width:80%;"><input type="text" size=30 name="place_name" value=""></td>
         </tr>
         <tr>
             <td>출발지</td>
-            <td style="width:80%;"><input type="text" size=30 name="place1" value=""></td>
+            <td style="width:80%;"><input type="text" size=30 name="start_location" value=""></td>
         </tr>
         <tr>
             <td>목적지</td>
-            <td style="width:80%;"><input type="text" size=30 name="Password"></td>
+            <td style="width:80%;"><input type="text" size=30 name="dest_location"></td>
         </tr>
         
         <tr>
             <td>소요시간</td>
-            <td><input type="number" step=0.1 min=0 size=30 name="rePassword">&nbsp 시간</td>
+            <td><input type="number" step=0.1 min=0 size=30 name="travel_time">&nbsp 시간</td>
         </tr>
         
         <tr>
             <td>휴식시간</td>
-            <td><input type="number" step=0.1 min=0 size=30 name="rePassword">&nbsp 시간</td>
+            <td><input type="number" step=0.1 min=0 size=30 name="break_time">&nbsp 시간</td>
         </tr>
         <tr>
             <td>사진업로드</td>
-				<td><label for="ex_filename"></label> <input type="file" id="ex_filename" class="upload-hidden"> </td>
+				<td><label for="ex_filename"></label><input type="file" name="review_image" id="ex_filename" class="upload-hidden"> </td>
 				
         </tr>
            <tr>
             <td>제목</td>
              
-			<td style="width:80%;"><input type="text" name="rePassword"><td>
+			<td style="width:80%;"><input type="text" name="review_title"><td>
         </tr>    
          <tr>
             <td>리뷰작성하기</td>
              
 			<td>
 				<div class="form">
-					<textarea color=black name="message" rows="10" cols="30" style="resize:none;" placeholder="내용을 작성해주세요." ></textarea>
+					<textarea color=black name="review_contents" rows="10" cols="30" style="resize:none;" placeholder="내용을 작성해주세요." ></textarea>
 				</div>
 			</td>
         </tr>
@@ -234,6 +243,7 @@ input[type=submit]:hover {
         </tr>
         
     </table>
+      
 </form>
         <!-- 이건 그냥 팝업 <button onclick="window.open('address','window_name','width=430,height=500,location=no,status=no,scrollbars=yes');">button</button> -->
         <div class="map_wrap">
@@ -317,11 +327,12 @@ kakao.maps.event.addListener(map, 'click', function(mouseEvent) {
     
 });
 </script>
+	<% }        %>	
 </div>
 <div style="margin-top:2%;">
 	<hr/>
-	<br><br>
-	<center><a href="reviews_cat.jsp" class="button">돌아가기</a></center>
+	<br><br><br>
+	<center><a href="form_login.jsp" class="button">로그인</a></center>
 </div>
 
 
@@ -403,5 +414,6 @@ Clip="content-box",b.cloneNode(!0).style.backgroundClip="",k.clearCloneStyle="co
 	
 	
 	</script>
+
 </body>	
 </html>

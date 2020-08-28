@@ -17,6 +17,23 @@ public class ReviewDTO {
 	private String map_long;
 	private String review_image;
 	
+	
+	
+	public ReviewDTO(String start_location, String dest_location, String travel_time, String break_time,
+			String review_score, String review_title, String review_contents, String place_name, String review_image) {
+		super();
+		this.start_location = start_location;
+		this.dest_location = dest_location;
+		this.travel_time = travel_time;
+		this.break_time = break_time;
+		this.review_score = review_score;
+		this.review_title = review_title;
+		this.review_contents = review_contents;
+		this.place_name = place_name;
+		this.review_image = review_image;
+	}
+
+
 	public ReviewDTO(String review_number, String review_id, String place_name,String review_date,String start_location, String dest_location,
 			String travel_time, String break_time, String review_score, String review_title, String review_contents,
 			String map_lat, String map_long, String review_image) {
