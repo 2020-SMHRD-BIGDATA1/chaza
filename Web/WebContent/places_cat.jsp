@@ -170,7 +170,8 @@
 			     
 			      function btnInput(name){
 			    	  var enc = encodeURI(name);
-			
+			    	  
+			   
 			    	  $.ajax({
 			    			url : 'SelectCity?city='+enc,
 			    			type : 'GET',

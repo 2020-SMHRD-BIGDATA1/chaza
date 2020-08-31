@@ -43,7 +43,7 @@ table {
 }
 
 tr {
-    height: 1em;
+    height: 4em;
 }
 
 input[type=text], input[type=password] {

@@ -406,7 +406,7 @@ function send() {
         console.log('마지막간다'+message2);
         
         $('.chatbox').append('<div class="friend-bubble bubble">'+"마시안 해변 가는게 좋겠네!"+'</div>');
-        $('.chatbox').append('<div class="friend-bubble bubble"><a href="http://localhost:8082/Web/travel_info.jsp?name=%EB%A7%88%EC%8B%9C%EC%95%88%20%ED%95%B4%EB%B3%80" >마시안 해변</a></div>');
+        $('.chatbox').append('<div class="friend-bubble bubble"><a href="http://localhost:8083/Web/travel_info.jsp?name=%EB%A7%88%EC%8B%9C%EC%95%88%20%ED%95%B4%EB%B3%80">마시안 해변</a></div>');
        /*  $.ajax({
           type: 'POST',
           url: "http://localhost:9000/myPage/predict",

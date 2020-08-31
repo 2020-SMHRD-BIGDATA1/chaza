@@ -8,11 +8,11 @@ CREATE TABLE MEMBER(
 					MEMBER_GENDER CHAR(20)			NOT NULL,	-- 성별
 					MEMBER_TEL VARCHAR2(20)			NOT NULL,	-- 회원 연락처
 					MEMBER_ADDR VARCHAR2(200)		NOT NULL,	-- 회원 주소
-					MEMBER_CAR_OWN CHAR(20),					-- 차량 소유 여부
+					MEMBER_CAR_OWN CHAR(20)			NOT NULL,	-- 차량 소유 여부
 					MEMBER_CAR_MODEL VARCHAR2(100),				-- 소유한다면 차량 모델은?
-					CAMPING_CASE VARCHAR2(200),					-- 캠핑 목적(중복값 선택)
-					CAMPING_MEMBER VARCHAR2(200),				-- 캠핑 동행자
-					CAMPING_COUNT VARCHAR2(50),				-- 캥핑 경험 횟수
+					CAMPING_CASE VARCHAR2(200)		NOT NULL,	-- 캠핑 목적(중복값 선택)
+					CAMPING_MEMBER VARCHAR2(200)	NOT NULL,	-- 캠핑 동행자
+					CAMPING_COUNT VARCHAR2(50)		NOT NULL,	-- 캥핑 경험 횟수
 					
 					CONSTRAINT MEMBER_ID_PK PRIMARY KEY (MEMBER_ID)
 )
@@ -27,24 +27,24 @@ SELECT * FROM PLACE
 DROP TABLE PLACE
 
 CREATE TABLE PLACE(
-			   PLACE_ID NUMBER 					NOT NULL,		-- 여행지 코드
-               PLACE_NAME VARCHAR2(100)			NOT NULL,		-- 여행지 이름
-               PLACE_CAT VARCHAR2(100)			NOT NULL,		-- 지역 카테고리
-               PLACE_ADDR VARCHAR2(200)         NOT NULL,		-- 여행지 주소
-               TOILET CHAR(20)                  NOT NULL,		-- 화장실 여부
-               SINK CHAR(20)                  NOT NULL,			-- 주변 개수대 여부
-               WATER CHAR(20)                  NOT NULL,		-- 주변 수돗물 여부
-               TITLE VARCHAR2(100),								-- 여행지 한줄평
-               CONTENTS VARCHAR2(1024),							-- 여행지 소개글
-               PLACE_SCORE NUMBER               NOT NULL,		-- 평점(별 모양)
-               PLACE_LAT FLOAT,
-               PLACE_LNG FLOAT,
-               PLACE_IMAGE VARCHAR2(100),
-               
-               CONSTRAINT PLACE_ID_PK PRIMARY KEY(PLACE_ID)
+				PLACE_ID NUMBER,
+				PLACE_NAME VARCHAR2(100)			NOT NULL,
+				PLACE_CAT VARCHAR2(100)			NOT NULL,
+				PLACE_ADDR VARCHAR2(200)			NOT NULL,
+				TOILET CHAR(20)					NOT NULL,
+				SINK CHAR(20)					NOT NULL,
+				WATER CHAR(20)					NOT NULL,
+				TITLE VARCHAR2(100)				NOT NULL,
+				CONTENTS VARCHAR2(1024)			NOT NULL,
+				PLACE_SCORE NUMBER				NOT NULL,
+				PLACE_LAT FLOAT,
+				PLACE_LNG FLOAT,
+				PLACE_IMAGE VARCHAR2(100),
+				
+				CONSTRAINT PLACE_ID_PK PRIMARY KEY(PLACE_ID)
 )
 
-// 이건 테스트입니다. LONG LONG LONG대문을 열어라
+// 이건 테스트입니다. LONG LONG LONG대문을 열어라 : 20.08.29, 테스트 결과 출력문에 LONG이라고 나와도 실제 값은 잘 들어가있음.
 --create table thisistest(
 --						test_1 varchar2(1024),
 --						test_2 varchar2(2048),
@@ -84,54 +84,50 @@ CREATE TABLE REVIEW(
 
 DROP SEQUENCE REVIEW_NUM
 
-create sequence review_num
-	start with 1
-	increment by 1
+CREATE SEQUENCE REVIEW_NUM
+START WITH 1 INCREMENT BY 1
+	
 insert into review values(1,'BORADORI','홍천 개야리 홍천강변',SYSDATE,'서울특별시 성동구 천호동','강원 홍천군 서면 개야리 산',5,4,2,'무더위에 힐링여행다녀오기!','개야리유원지는 미루나무길이 있어서 산책하기 좋아요~',37.69548521,127.6407062,'images/place_40.jpg');
 insert into review values(2,'SOO','이포보 오토캠핑장 주변 남한강변',SYSDATE,'경남 창원시 의창구','경기 여주시 대신면 당남리',4,3,1,'바쁜일상 아이들과 추억쌓기','조용하고 한적해 아이들과 함께 오기 좋은 곳이에요',37.38759367,127.5460139,'images/place_14.jpg');
 insert into review values(3,'SILVER','강과 바다가 만나는 곳',SYSDATE,'경기 평택시 서탄면','경북 경주시 양북면',5,2,2,'푸른바다가 인상깊은 곳','날씨도 좋아 아이들과 함께 즐거운 여행하고 왔네요 ㅎㅎ',35.74246819,129.4834412,'images/place_108.jpg');
 
 --사용자 특성 테이블 생성
-create table feature(
-					feature_id varchar2(100),
-					feature_car_own char(20)			not null,
-					feature_car_model varchar2(100),
-					feature_case varchar2(200),
-					feature_member varchar2(200),
-					feature_count varchar2(50),
-					feature_place varchar(100),
-					feature_score number,
+CREATE	TABLE FEATURE(
+					MEMBER_ID VARCHAR2(100),
+					FEATURE_CAR_OWN CHAR(20)			NOT NULL,
+					FEATURE_CAR_MODEL VARCHAR2(100),
+					FEATURE_CASE VARCHAR2(200)			NOT NULL,
+					FEATURE_MEMBER VARCHAR2(200)		NOT NULL,
+					FEATURE_COUNT VARCHAR2(50)			NOT NULL,
+					FEATURE_PLACE VARCHAR2(100)			NOT NULL,
+					FEATURE_SCORE NUMBER				NOT NULL,
 					
-					constraint feature_id_fk foreign key (feature_id)
-					references member (member_id)
+					CONSTRAINT FEATURE_MEMBER_ID_FK FOREIGN KEY (FEATURE_ID)
+					REFERENCES MEMBER (MEMBER_ID)
 )
 
 drop table rentcar
-create table rentcar(
-					shop_name varchar2(100)				not null,
-					shop_addr varchar2(200)				not null,
-					shop_tel varchar2(20),
-					rent_lat float,
-					rent_lng float
+
+CREATE TABLE RENTCAR(
+					SHOP_NAME VARCHAR2(100)		NOT NULL,
+					SHOP_ADDR VARCHAR2(200)		NOT NULL,
+					SHOP_TEL VARCHAR2(20),
+					RENT_LAT FLOAT,
+					RENT_LNG FLOAT
 )
-create table reveiw_list(
-						review_number number,
-						review_id varchar2(100)			not null,
-						review_date date,
-						review_score number,
-						review_title varchar2(100),
-						review_image varchar2(100),
-						place_cat varchar2(100),
-						place_name varchar2(100),
+
+CREATE TABLE REVIEW_LIST(
+						REVIEW_NUMBER NUMBER		NOT NULL,
+						REVIEW_ID VARCHAR2(100)		NOT NULL,
+						REVIEW_DATE DATE			NOT NULL,
+						REVIEW_TITLE VARCHAR2(100)	NOT NULL,
+						REVIEW_IMAGE VARCHAR2(100),
+						PLACE_CAT VARCHAR2(100),
+						PLACE_NAME VARCHAR2(100),
 						
-						constraint review_number_fk foreign key (review_number)
-						references review (review_number)
+						CONSTRAINT REVIEW_NUMBER_FK FOREIGN KEY (REVIEW_NUMBER)
+						REFERENCES REVIEW(REVIEW_NUMBER)
 )
-
-
-
-
-
 
 INSERT INTO RENTCAR (SHOP_NAME, SHOP_ADDR, SHOP_TEL, RENT_LAT, RENT_LNG) VALUES ('㈜이머징카','강서구 공항대로426, 602호(VIP오피스텔)','02-2247-0601',37.554871,126.853903);
 INSERT INTO RENTCAR (SHOP_NAME, SHOP_ADDR, SHOP_TEL, RENT_LAT, RENT_LNG) VALUES ('에이제이렌터카㈜','강원도 강릉시 강릉대로 302, 1층 (옥천동)','033-635-0015',37.763433,128.901466);

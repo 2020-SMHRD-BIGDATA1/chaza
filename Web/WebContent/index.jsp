@@ -215,6 +215,11 @@
 							
 							<article class="col-4 col-12-mobile special">
 								<a href="review_info.jsp?num=2" class="image featured"><img src="images/place_14.jpg" alt="" /></a>
+								<tr>
+										<th align="left">gold</th>
+										<th></th>
+										<th align="right">2020-08-28 12:29:52</th>
+									</tr>
 								<header>
 									<h3><a href="review_info.jsp?num=3">바쁜일상 아이들과 추억쌓기</a></h3>
 								</header>
